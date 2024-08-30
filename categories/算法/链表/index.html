@@ -3,21 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>快慢指针 | 王潇的博客</title>
+    <title>分类: 链表 | 王潇的博客</title>
     
     
-        <meta name="keywords" content="快慢指针" />
+        <meta name="keywords" content="王潇的博客" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="链表题目简单分为三类：  链表的处理：合并，删除等 链表的反转以及衍生 链表成环及其衍生  做链表处理类问题需要把握一个中心思想——即处理链表的本质，就是处理链表节点之间的指针关系。 在处理数组和链表相关问题时，双指针技巧是经常用到的，双指针技巧主要分两类：左右指针和快慢指针。 左右指针，即两个指针相向或者相背而行；快慢指针，即两个指针同向而行，一块一慢。 对于单链表，大部分技巧都属于快慢指针；对">
-<meta property="og:type" content="article">
-<meta property="og:title" content="快慢指针">
-<meta property="og:url" content="https://0922wx.github.io/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="王潇的博客">
+<meta property="og:url" content="https://0922wx.github.io/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="王潇的博客">
-<meta property="og:description" content="链表题目简单分为三类：  链表的处理：合并，删除等 链表的反转以及衍生 链表成环及其衍生  做链表处理类问题需要把握一个中心思想——即处理链表的本质，就是处理链表节点之间的指针关系。 在处理数组和链表相关问题时，双指针技巧是经常用到的，双指针技巧主要分两类：左右指针和快慢指针。 左右指针，即两个指针相向或者相背而行；快慢指针，即两个指针同向而行，一块一慢。 对于单链表，大部分技巧都属于快慢指针；对">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-29T02:06:58.000Z">
-<meta property="article:modified_time" content="2024-08-29T11:46:13.682Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -204,20 +200,20 @@
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             算法
                         </a>
                          <ul class="unstyled" id="tree" > 
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             双指针
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/">快慢指针</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/">快慢指针</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -301,123 +297,45 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-双指针" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-                    <div class="article-meta">
-                        
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针</a>
+            <section id="main">
+<div class="timeline timeline-wrap">
+    <div class="timeline-row timeline-row-major">
+        <span class="node"><i class="fa fa-folder"></i></span>
+        <h1 class="title">链表</h1>
     </div>
-
-                        
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/">
-            <time datetime="2024-08-29T02:06:58.000Z" itemprop="datePublished">2024-08-29</time>
-        </a>
-    </div>
-
-
-                        
-                            <i class="fa fa-bar-chart"></i>
-                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
-                        
-                        
-                    </div>
-                
+    
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            快慢指针
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2024/08/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E8%AE%A9%E6%88%91%E6%98%8E%E4%BA%86%E4%BA%86%E9%93%BE%E8%A1%A8/">领悟链表节点</a>
         </h1>
     
 
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-        
-            
-        
-        
-            <p>链表题目简单分为三类：</p>
-<ul>
-<li>链表的处理：合并，<strong>删除</strong>等</li>
-<li>链表的反转以及衍生</li>
-<li>链表成环及其衍生</li>
-</ul>
-<p>做链表处理类问题需要把握一个中心思想——即<strong>处理链表的本质，就是处理链表节点之间的指针关系</strong>。</p>
-<p>在处理数组和链表相关问题时，双指针技巧是经常用到的，双指针技巧主要分两类：<strong>左右指针和快慢指针</strong>。</p>
-<p>左右指针，即两个指针相向或者相背而行；快慢指针，即两个指针同向而行，一块一慢。</p>
-<p>对于单链表，大部分技巧都属于快慢指针；对于数组，我们把索引当作数组中的指针。</p>
-<h1 id="快慢指针技巧"><a href="#快慢指针技巧" class="headerlink" title="快慢指针技巧"></a>快慢指针技巧</h1><h2 id="原地修改"><a href="#原地修改" class="headerlink" title="原地修改"></a>原地修改</h2><p><strong>数组中常见的快慢指针技巧，比如原地修改数组</strong></p>
-<p><strong>26. 删除有序数组中的重复项</strong> | <a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">力扣 </a> </p>
-<p>给你一个 <strong>非严格递增排列</strong> 的数组 <code>nums</code> ，请你<a target="_blank" rel="noopener" href="http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95"> 原地</a> 删除重复出现的元素，使每个元素 <strong>只出现一次</strong> ，返回删除后数组的新长度。元素的 <strong>相对顺序</strong> 应该保持 <strong>一致</strong> 。然后返回 <code>nums</code> 中唯一元素的个数。</p>
-<p>考虑 <code>nums</code> 的唯一元素的数量为 <code>k</code> ，你需要做以下事情确保你的题解可以被通过：</p>
-<ul>
-<li>更改数组 <code>nums</code> ，使 <code>nums</code> 的前 <code>k</code> 个元素包含唯一元素，并按照它们最初在 <code>nums</code> 中出现的顺序排列。<code>nums</code> 的其余元素与 <code>nums</code> 的大小不重要。</li>
-<li>返回 <code>k</code> 。</li>
-</ul>
-<p>高效解决这道题就要用到快慢指针技巧：</p>
-<p>让慢指针slow走在后面，快指针fast走在前面探路，找到一个不重复的元素就赋值给slow并让slow前进一步。</p>
-<p>这样就保证了nums[0…slow]都是无重复元素，fast遍历完整个数组后，nums[0…slow]即是整个数组去重的结果。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> removeDuplicates = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (nums.<span class="property">length</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> slow = <span class="number">0</span>, fast = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (fast &lt; nums.<span class="property">length</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[fast] != nums[slow]) &#123;</span><br><span class="line">            slow++;</span><br><span class="line">            <span class="comment">// 维护 nums[0..slow] 无重复</span></span><br><span class="line">            nums[slow] = nums[fast];</span><br><span class="line">        &#125;</span><br><span class="line">        fast++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 数组长度为索引 + 1</span></span><br><span class="line">    <span class="keyword">return</span> slow + <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>力扣第83题「<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list">删除排序链表中的重复元素</a>」，链表去重与数组去重相似，唯一的区别是把数组赋值操作变成操作指针而已。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> deleteDuplicates = <span class="keyword">function</span>(<span class="params">head</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(head === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span></span><br><span class="line">  <span class="keyword">let</span> fast =head,slow = head</span><br><span class="line">  <span class="keyword">while</span>(fast !==<span class="literal">null</span>)&#123;</span><br><span class="line">​    <span class="keyword">if</span>(fast.<span class="property">val</span> !== slow.<span class="property">val</span>)&#123;</span><br><span class="line">​      slow.<span class="property">next</span> = fast</span><br><span class="line">​      slow = slow.<span class="property">next</span></span><br><span class="line">​    &#125;</span><br><span class="line">​    fast++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 断开与后面重复元素的连接</span></span><br><span class="line">  slow.<span class="property">next</span> = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">return</span> head;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<p>(说起来，去重数组用Set()在力扣居然也能通过。)</p>
-<h1 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h1><p>暂时不会，会了再说吧</p>
-
-            </div>
-        
-        <footer class="article-footer">
-        </footer>
+                <div class="article-meta">
+                    
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2024/08/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E8%AE%A9%E6%88%91%E6%98%8E%E4%BA%86%E4%BA%86%E9%93%BE%E8%A1%A8/">
+            <time datetime="2024-08-30T11:29:38.000Z" itemprop="datePublished">2024-08-30</time>
+        </a>
     </div>
-</article>
 
 
-    
-<nav id="article-nav">
-    
-        <a href="/2024/08/29/8-29/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    幻想时间
-                
+                    
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8/">链表</a>
+    </div>
+
+                    
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2024/08/28/Deep-and-Shallow-Copy/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">浅拷贝与深拷贝</div>
-        </a>
-    
-</nav>
-
-
-
-
-
-    
-    
-
-
-
-
-<!-- baidu url auto push script -->
-<script type="text/javascript">
-    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
-</script>     
+</div>
 </section>
         </div>
         <!-- <footer id="footer">

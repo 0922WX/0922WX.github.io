@@ -9,15 +9,15 @@
         <meta name="keywords" content="浅拷贝与深拷贝" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="记录于7月3号，语雀 首先明确JS的数据类型能分成基本数字类型和引用类型 1234let a &#x3D;10;let b &#x3D;a;a &#x3D;100;console.log(b); &#x2F;&#x2F;结果为10  基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。 1234let a &#x3D;[1,2,3,4];let b">
+    <meta name="description" content="记录于7月3号，语雀 首先明确JS的数据类型能分成基本数字类型和引用类型 1234let a &#x3D;10;let b &#x3D;a;a &#x3D;100;console.log(b); &#x2F;&#x2F;结果为10 基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。 1234let a &#x3D;[1,2,3,4];let b &#x3D;a;a[0] &#x3D;1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅拷贝与深拷贝">
 <meta property="og:url" content="https://0922wx.github.io/2024/08/28/Deep-and-Shallow-Copy/index.html">
 <meta property="og:site_name" content="Majula">
-<meta property="og:description" content="记录于7月3号，语雀 首先明确JS的数据类型能分成基本数字类型和引用类型 1234let a &#x3D;10;let b &#x3D;a;a &#x3D;100;console.log(b); &#x2F;&#x2F;结果为10  基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。 1234let a &#x3D;[1,2,3,4];let b">
+<meta property="og:description" content="记录于7月3号，语雀 首先明确JS的数据类型能分成基本数字类型和引用类型 1234let a &#x3D;10;let b &#x3D;a;a &#x3D;100;console.log(b); &#x2F;&#x2F;结果为10 基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。 1234let a &#x3D;[1,2,3,4];let b &#x3D;a;a[0] &#x3D;1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-08-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-08-28T12:15:23.002Z">
+<meta property="article:modified_time" content="2024-09-02T12:11:48.087Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -145,7 +145,7 @@
                             &nbsp;
                             流水账
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -156,7 +156,7 @@
                         </a>
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E9%81%97%E5%BC%8F%E6%97%B6%E9%97%B4%E7%BA%BF/">遗式时间线</a></li>  </ul> 
                     </li> 
-                     <li class="file"><a href="/2024/08/28/%E5%88%9D%E8%A1%B7/">初衷</a></li>  </ul> 
+                     <li class="file"><a href="/2024/08/28/%E5%88%9D%E8%A1%B7/">一切都轻言细语，踮足而行</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory open">
@@ -165,7 +165,25 @@
                             &nbsp;
                             前端
                         </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            Js有的没的
+                        </a>
                          <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            React
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/02/React%E7%BB%84%E4%BB%B6%E7%9A%84TS%E7%B1%BB%E5%9E%8B/">React组件的TS类型</a></li>  </ul> 
+                    </li> 
+                     </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -175,6 +193,15 @@
                             算法
                         </a>
                          <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            二叉树
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/">二叉树前置思想</a></li>  </ul> 
+                    </li> 
+                    
                     <li class="directory">
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder"></i>
@@ -284,7 +311,7 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/">Js有的没的</a>
     </div>
 
                         
@@ -323,25 +350,25 @@
             <p>记录于7月3号，语雀</p>
 <p><strong>首先明确JS的数据类型能分成基本数字类型和引用类型</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =<span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> b =a;</span><br><span class="line">a =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//结果为10</span></span><br></pre></td></tr></table></figure>
-
-<p>基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。</p>
+<p>基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a=10，b=10，两者相互独立，所以a值的修改并不影响b。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> b =a;</span><br><span class="line">a[<span class="number">0</span>] =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//结果为[100,2,3,4]</span></span><br></pre></td></tr></table></figure>
-
 <p>我们修改了数组a，却也影响了数组b，<strong>引用类型的值(栈中)存放的并非数值本身，而是内存地址，仅拷贝地址，就是浅拷贝</strong>。</p>
-<h1 id="一些深拷贝的方法"><a href="#一些深拷贝的方法" class="headerlink" title="一些深拷贝的方法"></a>一些深拷贝的方法</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> b =[...a];</span><br><span class="line">a[<span class="number">0</span>] =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="comment">//b:[1,2,3,4]</span></span><br><span class="line"><span class="comment">//a:[100,2,3,4]</span></span><br></pre></td></tr></table></figure>
-
+<h1>一些深拷贝的方法</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> b =[...a];</span><br><span class="line">a[<span class="number">0</span>] =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="comment">//b:[1,2,3,4]</span></span><br><span class="line"><span class="comment">//a:[100,2,3,4]</span></span><br></pre></td></tr></table></figure>
 <p>从内存里面开辟一块新的空间存放数组，利用展开运算符把a的每一项存入数组中，<strong>虽然有效，然有其局限，遇上多维数组就不管用了</strong>。</p>
-<h2 id="为什么不管用？"><a href="#为什么不管用？" class="headerlink" title="为什么不管用？"></a>为什么不管用？</h2><p>二维数组内的数组仍然是引用类型，对应另一个地址存储了这个数组。虽然我们经过了拷贝，在堆里开辟一个新空间存储给b，但是001中的二维数组存的就是一个地址，所以新开辟的空间拿到的也是一个地址。</p>
+<h2 id="为什么不管用？">为什么不管用？</h2>
+<p>二维数组内的数组仍然是引用类型，对应另一个地址存储了这个数组。虽然我们经过了拷贝，在堆里开辟一个新空间存储给b，但是001中的二维数组存的就是一个地址，所以新开辟的空间拿到的也是一个地址。</p>
 <p><strong>所以我们要想办法实现多层拷贝，各自开辟独立空间，互不干扰</strong>。</p>
 <p>如果是基本类型数据，他们的拷贝就是深拷贝；对于引用类型数据，不论数据是一层还是多层，只要把内部的引用类型数据全部独立开辟内存空间，数据完全互不干扰，就是深拷贝，只要有共用数据就是浅拷贝。</p>
-<h1 id="多层拷贝"><a href="#多层拷贝" class="headerlink" title="多层拷贝"></a>多层拷贝</h1><h2 id="常用方法-Json格式转化"><a href="#常用方法-Json格式转化" class="headerlink" title="常用方法:Json格式转化"></a>常用方法:Json格式转化</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>,&#123;<span class="attr">name</span>:<span class="string">&#x27;wx&#x27;</span>&#125;]];</span><br><span class="line"><span class="keyword">let</span> b =<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title function_">stringify</span>(a));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> b);</span><br><span class="line"><span class="comment">//[1,2,3,4[5,6,&#123;name:&#x27;wx&#x27;&#125;]]</span></span><br><span class="line"><span class="comment">//object</span></span><br></pre></td></tr></table></figure>
-
+<h1>多层拷贝</h1>
+<h2 id="常用方法-Json格式转化">常用方法:Json格式转化</h2>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>,&#123;<span class="attr">name</span>:<span class="string">&#x27;wx&#x27;</span>&#125;]];</span><br><span class="line"><span class="keyword">let</span> b =<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title function_">stringify</span>(a));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> b);</span><br><span class="line"><span class="comment">//[1,2,3,4[5,6,&#123;name:&#x27;wx&#x27;&#125;]]</span></span><br><span class="line"><span class="comment">//object</span></span><br></pre></td></tr></table></figure>
 <p>为数不多的缺点就是无法转化拷贝函数类型(这真的是我要考虑的东西吗)。</p>
-<h2 id="所以说，接下来就是实现函数的拷贝。"><a href="#所以说，接下来就是实现函数的拷贝。" class="headerlink" title="所以说，接下来就是实现函数的拷贝。"></a>所以说，接下来就是实现函数的拷贝。</h2><p>如果没有嵌套数据，使用展开运算符即可解决，能解决的原因是这里修改一个函数等于重写一个函数，重写就会在内存里开辟一个新空间。所以，如果我们的数据里没有嵌套数组和对象，又有函数，是可以直接用展开运算符来拷贝的(好用，爱用，虽然我还没有实际用到过)。</p>
+<h2 id="所以说，接下来就是实现函数的拷贝。">所以说，接下来就是实现函数的拷贝。</h2>
+<p>如果没有嵌套数据，使用展开运算符即可解决，能解决的原因是这里修改一个函数等于重写一个函数，重写就会在内存里开辟一个新空间。所以，如果我们的数据里没有嵌套数组和对象，又有函数，是可以直接用展开运算符来拷贝的(好用，爱用，虽然我还没有实际用到过)。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&#x27;wx&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">        <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">let</span> b =&#123;...a&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a为:&quot;</span>,a);  <span class="comment">//&#123;name:&#x27;wx&#x27;,age:18,fn:f&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b为:&quot;</span>,b);  <span class="comment">//&#123;name:&#x27;wx&#x27;,age:18,fn:f&#125;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="手写一个递归实现相对完美的深拷贝"><a href="#手写一个递归实现相对完美的深拷贝" class="headerlink" title="手写一个递归实现相对完美的深拷贝"></a>手写一个递归实现相对完美的深拷贝</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">oldData</span>)&#123;</span><br><span class="line">  <span class="comment">//进入循坏条件为数组或者对象,具体是什么得继续判断</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> oldData === <span class="string">&#x27;object&#x27;</span> &amp;&amp; oldData !== <span class="literal">null</span>)&#123;</span><br><span class="line">    <span class="comment">//如果是数组就新建一个新数组，否则就新建一个对象</span></span><br><span class="line">    <span class="keyword">let</span> res =<span class="title class_">Array</span>.<span class="title function_">isArray</span>(oldData)? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> k <span class="keyword">in</span> oldData)&#123;</span><br><span class="line">      res[k] = <span class="title function_">deepClone</span>(oldData[k]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> oldData;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1>手写一个递归实现相对完美的深拷贝</h1>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">oldData</span>)&#123;</span><br><span class="line">  <span class="comment">//进入循坏条件为数组或者对象,具体是什么得继续判断</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> oldData === <span class="string">&#x27;object&#x27;</span> &amp;&amp; oldData !== <span class="literal">null</span>)&#123;</span><br><span class="line">    <span class="comment">//如果是数组就新建一个新数组，否则就新建一个对象</span></span><br><span class="line">    <span class="keyword">let</span> res =<span class="title class_">Array</span>.<span class="title function_">isArray</span>(oldData)? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> k <span class="keyword">in</span> oldData)&#123;</span><br><span class="line">      res[k] = <span class="title function_">deepClone</span>(oldData[k]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> oldData;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -366,7 +393,7 @@
     
         <a href="/2024/08/28/%E5%88%9D%E8%A1%B7/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">初衷</div>
+            <div class="article-nav-title">一切都轻言细语，踮足而行</div>
         </a>
     
 </nav>

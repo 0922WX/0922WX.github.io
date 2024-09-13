@@ -9,15 +9,15 @@
         <meta name="keywords" content="React组件的TS类型" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="平时常用的类型在@types&#x2F;react这个包里，cra已经引入了。 JSX类型 如果你想描述一个jsx类型，使用React.ReactElement足矣。 比如 1234interface AaaProps &#123;	name:string;    content:React.Reactelement&#125; 这样就只能传入jsx类型 如果有时需要传入number,null呢？ 换成Re">
+    <meta name="description" content="平时常用的类型在@types&#x2F;react这个包里，cra已经引入了。 JSX类型 如果你想描述一个jsx类型，使用React.ReactElement。 比如 1234interface AaaProps &#123;	name:string;    content:React.Reactelement&#125; 这样就只能传入jsx类型 如果有时需要传入number,null呢？ 换成Reac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React组件的TS类型">
 <meta property="og:url" content="https://0922wx.github.io/2024/09/02/React%E7%BB%84%E4%BB%B6%E7%9A%84TS%E7%B1%BB%E5%9E%8B/index.html">
 <meta property="og:site_name" content="Majula">
-<meta property="og:description" content="平时常用的类型在@types&#x2F;react这个包里，cra已经引入了。 JSX类型 如果你想描述一个jsx类型，使用React.ReactElement足矣。 比如 1234interface AaaProps &#123;	name:string;    content:React.Reactelement&#125; 这样就只能传入jsx类型 如果有时需要传入number,null呢？ 换成Re">
+<meta property="og:description" content="平时常用的类型在@types&#x2F;react这个包里，cra已经引入了。 JSX类型 如果你想描述一个jsx类型，使用React.ReactElement。 比如 1234interface AaaProps &#123;	name:string;    content:React.Reactelement&#125; 这样就只能传入jsx类型 如果有时需要传入number,null呢？ 换成Reac">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-02T12:10:34.000Z">
-<meta property="article:modified_time" content="2024-09-02T12:37:00.874Z">
+<meta property="article:modified_time" content="2024-09-08T10:26:06.247Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -152,7 +152,7 @@
                             &nbsp;
                             2024年
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">噩耗：后天开学</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -181,7 +181,7 @@
                             &nbsp;
                             Js有的没的
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory open">
@@ -367,7 +367,7 @@
         
             <p>平时常用的类型在@types/react这个包里，cra已经引入了。</p>
 <h1>JSX类型</h1>
-<p>如果你想描述一个jsx类型，使用React.ReactElement足矣。</p>
+<p>如果你想描述一个jsx类型，使用React.ReactElement。</p>
 <p>比如</p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">AaaProps</span> &#123;</span><br><span class="line">	<span class="attr">name</span>:<span class="built_in">string</span>;</span><br><span class="line">    <span class="attr">content</span>:<span class="title class_">React</span>.<span class="property">Reactelement</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样就只能传入jsx类型</p>

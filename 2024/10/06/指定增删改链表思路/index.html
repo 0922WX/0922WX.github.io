@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>事件循环 | Majula</title>
+    <title>指定增删改链表思路 | Majula</title>
     
     
-        <meta name="keywords" content="事件循环" />
+        <meta name="keywords" content="指定增删改链表思路" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="事件循环包括三个部分： 1.主线程 2.宏队列：异步操作（如Ajax请求，定时器） 3.微队列：Promise回调等 顺序： 先执行主线程，遇到宏任务就放到宏队列，遇微任务放到微队列 主线程执行完毕，优先开始处理微队列，再执行宏队列，如此循环 事件循环是JavaScript非阻塞行为的关键。">
+    <meta name="description" content="连续做了HackerRank的链表题 怎么找到给定位置的节点前一项？(position以1开始计数，一般参数里有) 123456let currentNode &#x3D; listlet currentPosition &#x3D; 0while(currentNode !&#x3D;&#x3D;null &amp;&amp; currentPosition &lt; position -1)&#123;	currentNode &#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="事件循环">
-<meta property="og:url" content="https://0922wx.github.io/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/index.html">
+<meta property="og:title" content="指定增删改链表思路">
+<meta property="og:url" content="https://0922wx.github.io/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/index.html">
 <meta property="og:site_name" content="Majula">
-<meta property="og:description" content="事件循环包括三个部分： 1.主线程 2.宏队列：异步操作（如Ajax请求，定时器） 3.微队列：Promise回调等 顺序： 先执行主线程，遇到宏任务就放到宏队列，遇微任务放到微队列 主线程执行完毕，优先开始处理微队列，再执行宏队列，如此循环 事件循环是JavaScript非阻塞行为的关键。">
+<meta property="og:description" content="连续做了HackerRank的链表题 怎么找到给定位置的节点前一项？(position以1开始计数，一般参数里有) 123456let currentNode &#x3D; listlet currentPosition &#x3D; 0while(currentNode !&#x3D;&#x3D;null &amp;&amp; currentPosition &lt; position -1)&#123;	currentNode &#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-07T05:55:53.000Z">
-<meta property="article:modified_time" content="2024-09-07T06:00:40.151Z">
+<meta property="article:published_time" content="2024-10-06T14:26:22.000Z">
+<meta property="article:modified_time" content="2024-10-06T14:36:55.548Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -132,20 +132,20 @@
         
         
          <ul class="unstyled" id="tree" > 
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             前端
                         </a>
                          <ul class="unstyled" id="tree" > 
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             Js有的没的
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file active"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -204,9 +204,9 @@
                      <li class="file"><a href="/2024/08/28/%E5%88%9D%E8%A1%B7/"></a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             算法
                         </a>
@@ -247,13 +247,13 @@
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/31/8-31/">括号问题</a></li>  </ul> 
                     </li> 
                     
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             链表
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%98%8E%E4%BA%86%E9%93%BE%E8%A1%A8/">领悟链表节点</a></li>  <li class="file"><a href="/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/">指定增删改链表思路</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%98%8E%E4%BA%86%E9%93%BE%E8%A1%A8/">领悟链表节点</a></li>  <li class="file active"><a href="/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/">指定增删改链表思路</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -364,7 +364,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-事件循环" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-指定增删改链表思路" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -374,15 +374,15 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/">Js有的没的</a>
+        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8/">链表</a>
     </div>
 
                         
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">
-            <time datetime="2024-09-07T05:55:53.000Z" itemprop="datePublished">2024-09-07</time>
+        <a href="/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/">
+            <time datetime="2024-10-06T14:26:22.000Z" itemprop="datePublished">2024-10-06</time>
         </a>
     </div>
 
@@ -397,7 +397,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            事件循环
+            指定增删改链表思路
         </h1>
     
 
@@ -410,14 +410,13 @@
             
         
         
-            <p>事件循环包括三个部分：<br>
-1.主线程<br>
-2.宏队列：异步操作（如Ajax请求，定时器）<br>
-3.微队列：Promise回调等<br>
-顺序：<br>
-先执行主线程，遇到宏任务就放到宏队列，遇微任务放到微队列<br>
-主线程执行完毕，优先开始处理微队列，再执行宏队列，如此循环<br>
-事件循环是JavaScript非阻塞行为的关键。</p>
+            <p>连续做了HackerRank的链表题</p>
+<p>怎么找到给定位置的节点前一项？(position以1开始计数，一般参数里有)</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> currentNode = list</span><br><span class="line"><span class="keyword">let</span> currentPosition = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(currentNode !==<span class="literal">null</span> &amp;&amp; currentPosition &lt; position -<span class="number">1</span>)&#123;</span><br><span class="line">	currentNode = currentNode.<span class="property">next</span></span><br><span class="line">	currentPosition++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>增删改都是这样</p>
+<p>记得判断链表为空的情况</p>
+<p>记得判断给定位置在开头的情况</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (position === <span class="number">0</span>) &#123;</span><br><span class="line">     <span class="comment">//xxxx</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             </div>
         
@@ -430,19 +429,10 @@
     
 <nav id="article-nav">
     
-        <a href="/2024/09/08/9-8/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    9-8有那么一点点拨云见日了
-                
-            </div>
-        </a>
     
-    
-        <a href="/2024/09/06/9-6/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2024/10/02/%E5%BC%95%E5%85%A5tailwind-className/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">9-6连滚带爬的做完了</div>
+            <div class="article-nav-title">引入tailwind,className</div>
         </a>
     
 </nav>

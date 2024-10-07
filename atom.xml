@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-10-07T12:56:06.214Z</updated>
+  <updated>2024-10-07T14:23:25.077Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>10-7</title>
+    <link href="https://0922wx.github.io/2024/10/07/10-7/"/>
+    <id>https://0922wx.github.io/2024/10/07/10-7/</id>
+    <published>2024-10-07T14:20:19.000Z</published>
+    <updated>2024-10-07T14:23:25.077Z</updated>
+    
+    <content type="html"><![CDATA[<p>234234</p><p>这个<strong>简爱 鲜奶米布丁</strong></p><p>豪赤!🤓👍</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;234234&lt;/p&gt;
+&lt;p&gt;这个&lt;strong&gt;简爱 鲜奶米布丁&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;豪赤!🤓👍&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="日常" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
+    
+    <category term="流水账" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
+    
+    <category term="2024年" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/2024%E5%B9%B4/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Diagonal Difference对角线差</title>
@@ -503,32 +532,6 @@
     <category term="流水账" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
     <category term="2024年" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/2024%E5%B9%B4/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Bind Apply Call的区别</title>
-    <link href="https://0922wx.github.io/2024/09/21/BAC/"/>
-    <id>https://0922wx.github.io/2024/09/21/BAC/</id>
-    <published>2024-09-21T09:04:50.000Z</published>
-    <updated>2024-09-21T10:03:04.284Z</updated>
-    
-    <content type="html"><![CDATA[<p>相通点:都可以改变this 指向</p><p>为什么要改变this指向？</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;wx&quot;</span>;</span><br><span class="line"><span class="keyword">let</span> obj =&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;abc&quot;</span>,</span><br><span class="line">    <span class="attr">say</span>:<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">obj.<span class="title function_">say</span>();<span class="comment">//显示abc</span></span><br><span class="line"><span class="built_in">setTimeout</span>(obj.<span class="property">say</span>,<span class="number">10</span>);<span class="comment">//显示wx</span></span><br></pre></td></tr></table></figure><p>(实际我把var换成let或者const就不会打印出什么东西，因为那不再是全局变量，而是块级，输出一片空白捏)</p><p>同样调用obj,say,为什么结果不同呢?（涉及this绑定规则）</p><p>setTimeout所指向为window对象，其中的say方法是作为回调函数执行的，其中所传递的是函数的引用，并没有保留这个函数所属的对象，那么setTimeout调用函数时，其中的this取决于调用时的执行上下文(这里并没有指定上下文，所以10毫秒后在全局执行环境执行，浏览器自动绑定window。)</p><p>那么此时，如果想修改say方法中的this，就需要改变this指向了。</p><h1>apply绑定this</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    obj.<span class="property">say</span>.<span class="title function_">apply</span>(obj);</span><br><span class="line">&#125;,<span class="number">10</span>);<span class="comment">//输出abc</span></span><br></pre></td></tr></table></figure><p>参数传递：参数是在调用新函数时传递给它的参数。</p><p>(将所有参数放到一个数组里去)</p><p>调用时立即执行方法</p><p>比如</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj =&#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;abc&quot;</span>,</span><br><span class="line">    <span class="attr">say</span>:<span class="keyword">function</span>(<span class="params">param1,param2</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(param1 +<span class="string">&quot;,&quot;</span> + param2 +<span class="string">&quot;,&quot;</span>+ <span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    obj.<span class="property">say</span>.<span class="title function_">apply</span>(obj,[<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>])</span><br><span class="line">&#125;,<span class="number">10</span>)</span><br></pre></td></tr></table></figure><h1>call绑定this</h1><p>跟apply差不多，唯一的区别是他需要的参数并非是一个数组，而是依次传入</p><p>调用时立即执行方法</p><p>所以需要注意与参数一一对应。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    obj.<span class="property">say</span>.<span class="title function_">call</span>(obj,<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>)</span><br><span class="line">&#125;,<span class="number">10</span>)</span><br></pre></td></tr></table></figure><h1>bind绑定this</h1><p>与其他两者最大的区别是，bind返回值是一个新的函数</p><p>调用时不直接执行</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newFun = obj.<span class="property">say</span>.<span class="title function_">bind</span>(obj,<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>);</span><br><span class="line"><span class="title function_">newFun</span>();</span><br></pre></td></tr></table></figure><p>也不需要一次性传入所有参数</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> newFun = obj.<span class="property">say</span>.<span class="title function_">bind</span>(obj);</span><br><span class="line"><span class="title function_">newFun</span>(<span class="string">&quot;hello&quot;</span>,<span class="string">&quot;world&quot;</span>);</span><br></pre></td></tr></table></figure><h2 id="this的绑定规则">this的绑定规则</h2><p>this和函数定义的位置没有关系，只和调用者有关系</p><p>在运行时被绑定</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">foo</span>();<span class="comment">//window</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;wx&quot;</span>,</span><br><span class="line">    <span class="attr">foo</span>:foo</span><br><span class="line">&#125;</span><br><span class="line">obj.<span class="title function_">foo</span>()<span class="comment">// obj</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">foo.<span class="title function_">call</span>(<span class="string">&quot;abc&quot;</span>) <span class="comment">// string&#123; &quot;abc&quot; &#125;</span></span><br></pre></td></tr></table></figure><h2 id="隐式绑定">隐式绑定</h2><p>1.通过对象调用函数绑定this</p><p>谁<strong>直接</strong>调用foo()，this就指向谁。</p><p>当然，这有个前置条件：对象所调用的函数必须是对象的属性。</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="attr">name</span>:<span class="string">&quot;wx&quot;</span>,</span><br><span class="line">    <span class="attr">foo</span>:foo</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">foo</span>()</span><br></pre></td></tr></table></figure><h2 id="显式绑定">显式绑定</h2><p>如果obj对象上没有定义某个方法，但又想通过obj这个对象来调用这个方法？</p><p>也就是最上面的call,apply,bind了</p><h2 id="new绑定this">new绑定this</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Student</span>(<span class="params">name</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)<span class="comment">// student &#123;&#125;</span></span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> wx = <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(wx); <span class="comment">//student&#123;name:&#x27;abc&#x27;&#125;</span></span><br></pre></td></tr></table></figure><p>涉及面试题：new 关键字创建一个新对象的步骤？ 构造函数如何创建新对象？</p><p>1.创建一个空对象。</p><p>2.空对象的-proto-属性指向构造函数的Prototype属性。</p><p>3.执行构造函数，如果构造函数中有this，则此this指向刚刚创建的空对象。</p><p>4.返回刚刚创建的对象。</p><p>返回值？</p><p>在构造函数中，如果有return的话会返回什么？</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">Student</span>(<span class="params">name</span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>)</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&quot;我是对象&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> wx = <span class="keyword">new</span> <span class="title class_">Student</span>(<span class="string">&quot;abc&quot;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(wx);  <span class="comment">// &#123;name:&quot;我是新对象&quot;&#125;</span></span><br></pre></td></tr></table></figure><p>如果return的是<strong>对象</strong>，则直接返回对象</p><p>如果return的是基本类型，则return语句无效，仍然返回刚刚创建的新对象。</p><h1>如果多种绑定都存在，优先级？</h1><p><strong>隐式绑定和显式绑定同时存在，显式绑定优先级更高</strong></p><p><strong>new绑定优先级高于隐式绑定</strong>(隐式垫底了说是)</p><p><strong>new绑定优先级高于bind</strong></p><p>总结：new &gt; 显式(bind)&gt;隐式</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;相通点:都可以改变this 指向&lt;/p&gt;
-&lt;p&gt;为什么要改变this指向？&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/s</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Js有的没的" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/"/>
     
     
   </entry>

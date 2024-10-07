@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     
-    <title>二叉树前置思想 | Majula</title>
+    <title>二叉树前置思想 | WX&#39;sMajula</title>
     
     
         <meta name="keywords" content="二叉树前置思想" />
@@ -13,15 +13,13 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树前置思想">
 <meta property="og:url" content="https://0922wx.github.io/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/index.html">
-<meta property="og:site_name" content="Majula">
+<meta property="og:site_name" content="WX&#39;sMajula">
 <meta property="og:description" content="快速排序就是个二叉树的前序遍历，归并排序就是个二叉树的后序遍历。(听说高手都是这么想的) 所以先打点基础吧。 快排算法思路 代码框架 1234567891011const sort &#x3D; function(nums, lo, hi) &#123;    if (lo &gt;&#x3D; hi) &#123;        return;    &#125;    &#x2F;&#x2F; 对 nums[lo..hi] 进行切分">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://0922wx.github.io/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/quick.png">
 <meta property="article:published_time" content="2024-09-02T12:40:03.000Z">
 <meta property="article:modified_time" content="2024-09-02T13:11:55.831Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://0922wx.github.io/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/quick.png">
     
 
     
@@ -68,7 +66,7 @@
     
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
-<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="Majula" type="application/atom+xml">
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WX'sMajula" type="application/atom+xml">
 </head>
 
 <body>
@@ -78,7 +76,7 @@
         <div class="outer">
             <a href="/" id="logo" style="color: black;">
                 <i class="logo"></i>
-                <span class="site-title" style="color: black;">Majula</span>
+                <span class="site-title" style="color: black;">WX&#39;sMajula</span>
             </a>
             <nav id="main-nav" style="color: black;">
                 
@@ -485,7 +483,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二叉树遍历框架</span></span><br><span class="line"><span class="keyword">const</span> traverse = <span class="keyword">function</span>(<span class="params">root</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (root === <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ***** 前序位置 *****</span></span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(root.<span class="property">val</span>);</span><br><span class="line">    <span class="comment">// *******************</span></span><br><span class="line">    <span class="title function_">traverse</span>(root.<span class="property">left</span>);</span><br><span class="line">    <span class="title function_">traverse</span>(root.<span class="property">right</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>一句话总结快速排序：<strong>快速排序是先将一个元素排好序，然后再将剩下的元素排好序</strong>。</p>
 <p>快速排序的核心无疑是 <code>partition</code> 函数， <code>partition</code> 函数的作用是在 <code>nums[lo..hi]</code> 中寻找一个切分点 <code>p</code>，通过交换元素使得 <code>nums[lo..p-1]</code> 都小于等于 <code>nums[p]</code>，且 <code>nums[p+1..hi]</code> 都大于 <code>nums[p]</code></p>
-<img src="/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/quick.png" class="" title="例子">
+
 <p>一个元素左边的元素都比它小，右边的元素都比它大，所以 <code>partition</code> 函数干的事情，其实就是把 <code>nums[p]</code> 这个元素排好序了。</p>
 <p><strong>从二叉树的视角，我们可以把子数组 <code>nums[lo..hi]</code> 理解成二叉树节点上的值，<code>sort</code> 函数理解成二叉树的遍历函数</strong>。</p>
 <p><code>partition</code> 函数每次都将数组切分成左小右大两部分，恰好和二叉搜索树左小右大的特性吻合。</p>

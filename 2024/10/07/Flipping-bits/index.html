@@ -3,17 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: 数组 | Majula</title>
+    <title>Flipping bits | Majula</title>
     
     
-        <meta name="keywords" content="Majula" />
+        <meta name="keywords" content="Flipping bits" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Majula">
-<meta property="og:url" content="https://0922wx.github.io/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/index.html">
+    <meta name="description" content="Flipping bits | HackerRank 给你一个32-bits位无符号整数的列表，要求你输出你把它们中每个数二进制表示中的每位翻转之后的结果得到的新列表（即0变成1，1变成0）。 属于是知道js有左移右移就能秒了 右移（&gt;&gt;） - JavaScript | MDN (mozilla.org) 1234function flippingBits(n: number): nu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flipping bits">
+<meta property="og:url" content="https://0922wx.github.io/2024/10/07/Flipping-bits/index.html">
 <meta property="og:site_name" content="Majula">
+<meta property="og:description" content="Flipping bits | HackerRank 给你一个32-bits位无符号整数的列表，要求你输出你把它们中每个数二进制表示中的每位翻转之后的结果得到的新列表（即0变成1，1变成0）。 属于是知道js有左移右移就能秒了 右移（&gt;&gt;） - JavaScript | MDN (mozilla.org) 1234function flippingBits(n: number): nu">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-07T12:35:16.000Z">
+<meta property="article:modified_time" content="2024-10-07T12:37:35.306Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -128,6 +132,33 @@
         
         
          <ul class="unstyled" id="tree" > 
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            HackerRank三个月挑战
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第一周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/%E6%95%B0%E7%BB%84/">Divisible Sum Pairs 可除和对</a></li>  <li class="file"><a href="/2024/10/07/Sparse-Arrays/">Sparse Arrays 稀疏阵列</a></li>  <li class="file"><a href="/2024/10/07/Mini-Max-Sum/">Mini-Max Sum</a></li>  <li class="file"><a href="/2024/10/07/Time-Conversion/">Time Conversion</a></li>  <li class="file"><a href="/2024/10/07/Breaking-the-Records/">Breaking the Records</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            第二周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/Lonely-Integer/">Lonely Integer</a></li>  <li class="file"><a href="/2024/10/07/Grading-Students/">Grading Students</a></li>  <li class="file active"><a href="/2024/10/07/Flipping-bits/">Flipping bits</a></li>  <li class="file"><a href="/2024/10/07/Diagonal-Difference/">Diagonal Difference对角线差</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
                     <li class="directory">
                         <a href="#" data-role="directory">
                             <i class="fa fa-folder"></i>
@@ -232,15 +263,6 @@
                             双指针
                         </a>
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/">快慢指针</a></li>  </ul> 
-                    </li> 
-                    
-                    <li class="directory">
-                        <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
-                            &nbsp;
-                            数组
-                        </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E6%95%B0%E7%BB%84%E5%92%8C%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0k-%E6%B1%82-i-j-%E5%AF%B9%E4%B8%ADi-j%E5%92%8Car-i-ar-j-%E8%83%BD%E8%A2%ABk%E6%95%B4%E9%99%A4%E7%9A%84%E4%B8%AA%E6%95%B0/">给定一个整数数组和一个正整数k,求(i,j)对中i<j和ar[i]+ar[j]能被k整除的个数</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -369,45 +391,101 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">数组</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-Flipping-bits" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/07/%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E6%95%B0%E7%BB%84%E5%92%8C%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0k-%E6%B1%82-i-j-%E5%AF%B9%E4%B8%ADi-j%E5%92%8Car-i-ar-j-%E8%83%BD%E8%A2%ABk%E6%95%B4%E9%99%A4%E7%9A%84%E4%B8%AA%E6%95%B0/">给定一个整数数组和一个正整数k,求(i,j)对中i&lt;j和ar[i]+ar[j]能被k整除的个数</a>
-        </h1>
-    
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
+    </div>
 
-                <div class="article-meta">
-                    
+                        
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2024/10/07/%E7%BB%99%E5%AE%9A%E4%B8%80%E4%B8%AA%E6%95%B4%E6%95%B0%E6%95%B0%E7%BB%84%E5%92%8C%E4%B8%80%E4%B8%AA%E6%AD%A3%E6%95%B4%E6%95%B0k-%E6%B1%82-i-j-%E5%AF%B9%E4%B8%ADi-j%E5%92%8Car-i-ar-j-%E8%83%BD%E8%A2%ABk%E6%95%B4%E9%99%A4%E7%9A%84%E4%B8%AA%E6%95%B0/">
-            <time datetime="2024-10-07T05:02:44.000Z" itemprop="datePublished">2024-10-07</time>
+        <a href="/2024/10/07/Flipping-bits/">
+            <time datetime="2024-10-07T12:35:16.000Z" itemprop="datePublished">2024-10-07</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E7%BB%84/">数组</a>
-    </div>
-
-                    
-                </div>
-            </div>
-        </div>
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
     
-</div>
+        <h1 class="article-title" itemprop="name">
+            Flipping bits
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/three-month-preparation-kit-flipping-bits/problem?h_l=interview&amp;isFullScreen=true&amp;playlist_slugs%5B%5D%5B%5D=preparation-kits&amp;playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&amp;playlist_slugs%5B%5D%5B%5D=three-month-week-two">Flipping bits | HackerRank</a></p>
+<p>给你一个32-bits位无符号整数的列表，要求你输出你把它们中每个数二进制表示中的每位翻转之后的结果得到的新列表（即0变成1，1变成0）。</p>
+<p><strong>属于是知道js有左移右移就能秒了</strong></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Right_shift">右移（&gt;&gt;） - JavaScript | MDN (mozilla.org)</a></p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">flippingBits</span>(<span class="params"><span class="attr">n</span>: <span class="built_in">number</span></span>): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">        <span class="keyword">return</span> ~n &gt;&gt;&gt; <span class="number">0</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>翻译：按位取反并无符号右移32位</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2024/10/07/Diagonal-Difference/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    Diagonal Difference对角线差
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2024/10/07/Grading-Students/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Grading Students</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
 </section>
         </div>
         <!-- <footer id="footer">

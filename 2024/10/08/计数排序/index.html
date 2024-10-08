@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Diagonal Difference对角线差 | WX&#39;sMajula</title>
+    <title>计数排序 | WX&#39;sMajula</title>
     
     
-        <meta name="keywords" content="Diagonal Difference对角线差" />
+        <meta name="keywords" content="计数排序" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Diagonal Difference | HackerRank 计算矩阵的对角线差 力扣有道求对角线和 1572. 矩阵对角线元素的和 - 力扣（LeetCode） 只要你知道两边的对角线怎么求，一切都会好起来的 左边的对角线就arr[i][i],右边的的是arr[i][length-1-i] HackerRank让你求的是左右对角线的差的绝对值 1234567891011function di">
+    <meta name="description" content="第一眼 12345678910function countingSort(arr: number[]): number[] &#123;    &#x2F;&#x2F; Write your code here    let len:number &#x3D; arr.length    const newArr:number[] &#x3D; new Array(len).fill(0)    for(let i &#x3D;0;i&lt;le">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Diagonal Difference对角线差">
-<meta property="og:url" content="https://0922wx.github.io/2024/10/07/Diagonal-Difference/index.html">
+<meta property="og:title" content="计数排序">
+<meta property="og:url" content="https://0922wx.github.io/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="WX&#39;sMajula">
-<meta property="og:description" content="Diagonal Difference | HackerRank 计算矩阵的对角线差 力扣有道求对角线和 1572. 矩阵对角线元素的和 - 力扣（LeetCode） 只要你知道两边的对角线怎么求，一切都会好起来的 左边的对角线就arr[i][i],右边的的是arr[i][length-1-i] HackerRank让你求的是左右对角线的差的绝对值 1234567891011function di">
+<meta property="og:description" content="第一眼 12345678910function countingSort(arr: number[]): number[] &#123;    &#x2F;&#x2F; Write your code here    let len:number &#x3D; arr.length    const newArr:number[] &#x3D; new Array(len).fill(0)    for(let i &#x3D;0;i&lt;le">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-07T12:38:13.000Z">
-<meta property="article:modified_time" content="2024-10-07T12:56:06.214Z">
+<meta property="article:published_time" content="2024-10-08T12:01:06.000Z">
+<meta property="article:modified_time" content="2024-10-08T12:01:55.187Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -191,7 +191,7 @@
                             &nbsp;
                             第二周
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/Lonely-Integer/">Lonely Integer</a></li>  <li class="file"><a href="/2024/10/07/Grading-Students/">Grading Students</a></li>  <li class="file"><a href="/2024/10/07/Flipping-bits/">Flipping bits</a></li>  <li class="file active"><a href="/2024/10/07/Diagonal-Difference/">Diagonal Difference对角线差</a></li>  <li class="file"><a href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/Lonely-Integer/">Lonely Integer</a></li>  <li class="file"><a href="/2024/10/07/Grading-Students/">Grading Students</a></li>  <li class="file"><a href="/2024/10/07/Flipping-bits/">Flipping bits</a></li>  <li class="file"><a href="/2024/10/07/Diagonal-Difference/">Diagonal Difference对角线差</a></li>  <li class="file active"><a href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a></li>  </ul> 
                     </li> 
                      <li class="file"><a href="/2024/10/07/%E5%89%8D%E8%A8%80/">前言</a></li>  </ul> 
                     </li> 
@@ -428,7 +428,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-Diagonal-Difference" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-计数排序" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -445,8 +445,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2024/10/07/Diagonal-Difference/">
-            <time datetime="2024-10-07T12:38:13.000Z" itemprop="datePublished">2024-10-07</time>
+        <a href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">
+            <time datetime="2024-10-08T12:01:06.000Z" itemprop="datePublished">2024-10-08</time>
         </a>
     </div>
 
@@ -461,7 +461,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            Diagonal Difference对角线差
+            计数排序
         </h1>
     
 
@@ -474,35 +474,58 @@
             
         
         
-            <p><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/three-month-preparation-kit-diagonal-difference/problem?h_l=interview&amp;isFullScreen=true&amp;playlist_slugs%5B%5D%5B%5D=preparation-kits&amp;playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&amp;playlist_slugs%5B%5D%5B%5D=three-month-week-two">Diagonal Difference | HackerRank</a></p>
-<p>计算矩阵的对角线差</p>
-<p>力扣有道求对角线和</p>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/matrix-diagonal-sum/description/">1572. 矩阵对角线元素的和 - 力扣（LeetCode）</a></p>
-<p>只要你知道两边的对角线怎么求，一切都会好起来的</p>
-<p>左边的对角线就<code>arr[i][i]</code>,右边的的是<code>arr[i][length-1-i]</code></p>
-<p>HackerRank让你求的是左右对角线的差的绝对值</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">diagonalDifference</span>(<span class="params"><span class="attr">arr</span>: <span class="built_in">number</span>[][]</span>): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">const</span> length = arr.<span class="property">length</span></span><br><span class="line">     <span class="keyword">let</span> primarySum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> secondarySum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        primarySum += arr[i][i];</span><br><span class="line">        secondarySum += arr[i][length - <span class="number">1</span> - i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">abs</span>(primarySum - secondarySum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>遍历途中记录就行了</p>
-<p>力扣的是求和，还需要关心到元素项是不是偶数，(说起来求差不用关心吗)：</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> diagonalSum = <span class="keyword">function</span>(<span class="params">mat</span>) &#123;</span><br><span class="line"> <span class="keyword">const</span> length = mat.<span class="property">length</span></span><br><span class="line">    <span class="keyword">const</span> mid = <span class="title class_">Math</span>.<span class="title function_">floor</span>(length / <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        sum += mat[i][i] + mat[i][length - <span class="number">1</span> - i]</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum - mat[mid][mid] * (length &amp; <span class="number">1</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><code>return sum - mat[mid][mid] * (length &amp; 1)</code> 检查是否是奇数，如果是奇数，即中间元素被计算了两次，所以要减一次中心元素值</p>
-<p>为什么会重复计算？</p>
-<p>因为奇数项的话，会有一个中心值</p>
-<blockquote>
-<p>1 2 3</p>
-<p>4 5 6</p>
-<p>7 8 9</p>
-</blockquote>
-<blockquote>
-<p>第一轮</p>
-<p>1+3  sum=4</p>
-<p>5+5  sum=4+10 =14 这里算了两次</p>
-<p>9+7 sum=14+16 = 30</p>
-</blockquote>
-<p><code>length &amp; 1</code>  &amp;与 两个位都为1时，结果才为1</p>
-<p>如果<code>length</code>是偶数，那他二进制最后一位就是0，相反就是1</p>
-<h5 id="那为什么求差就不用考虑奇偶呢">那为什么求差就不用考虑奇偶呢</h5>
-<p>因为是求差，相同的早变成0了，没有的东西就不用考虑了</p>
+            <h5 id="第一眼">第一眼</h5>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">countingSort</span>(<span class="params"><span class="attr">arr</span>: <span class="built_in">number</span>[]</span>): <span class="built_in">number</span>[] &#123;</span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">let</span> <span class="attr">len</span>:<span class="built_in">number</span> = arr.<span class="property">length</span></span><br><span class="line">    <span class="keyword">const</span> <span class="attr">newArr</span>:<span class="built_in">number</span>[] = <span class="keyword">new</span> <span class="title class_">Array</span>(len).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i =<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i])&#123;</span><br><span class="line">           </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后尬住了</p>
+<p>拿到arr长度len</p>
+<p><s>开辟长度为len的数组，并填充0</s></p>
+<p><s>const newArr:number[] = new Array(len).fill(0)</s></p>
+<h5 id="第二眼">第二眼</h5>
+<p><strong>要求按arr最大值来定义数组长度，比如[1,1,3,2,1]的范围是[0…3],所以开辟res =[0,0,0,0]</strong></p>
+<p>所以得拿到最大值?</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const max = arr.find(...)</span><br></pre></td></tr></table></figure>
+<p>find只能返回符合条件的第一个元素，不能找最大值</p>
+<h6 id="解构找到最大值">解构找到最大值</h6>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> max = <span class="title class_">Math</span>.<span class="title function_">max</span>(...arr)</span><br></pre></td></tr></table></figure>
+<h6 id="reduce找到最大值">reduce找到最大值</h6>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> max =arr.<span class="title function_">reduce</span>(<span class="function">(<span class="params">acc,item</span>) =&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Math</span>.<span class="title function_">max</span>(acc,item)</span><br><span class="line">&#125;,arr[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>acc当前最大值,item遍历元素</p>
+<p><strong>当然，acc是reduce原本就是接收的4个参数之一,还有个可选的initialValue</strong></p>
+<ol>
+<li>Accumulator acc(累加器)</li>
+<li>Current Value cur(当前值)</li>
+<li>Current index idx(当前索引)</li>
+<li>Source Array src(源数组)</li>
+</ol>
+<p>遍历arr</p>
+<p>如果出现值，在特定位置计数加1</p>
+<p>arr[i] newArr[i] ++</p>
+<h5 id="第三眼">第三眼</h5>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">countingSort</span>(<span class="params"><span class="attr">arr</span>: <span class="built_in">number</span>[]</span>): <span class="built_in">number</span>[] &#123;</span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">let</span> <span class="attr">len</span>:<span class="built_in">number</span> = arr.<span class="property">length</span></span><br><span class="line">   <span class="keyword">const</span> max = <span class="title class_">Math</span>.<span class="title function_">max</span>(...arr)</span><br><span class="line">   <span class="keyword">const</span> newArr = <span class="title class_">Array</span>(max).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">       </span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相同数值再出现,再相同位置+1</p>
+<p><strong>有错</strong></p>
+<p>并非<code> const newArr = Array(max).fill(0)</code></p>
+<p>而是<code> const newArr = Array(max + 1).fill(0)</code></p>
+<p>为什么？</p>
+<p>因为要创建[0,max]全闭数组</p>
+<h5 id="第四眼">第四眼</h5>
+<p>到底怎么计算元素出现次数?</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> num <span class="keyword">of</span> arr)&#123;</span><br><span class="line">     newArr[num]++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过遍历输入数组 <code>arr</code> 中的每个数字 <code>num</code>，我们给 <code>countArr[num]</code> 这个位置的值加 1。</li>
+<li>例如，如果输入数组是<code>[2, 3, 2, 1]</code>，则newArr将变为<code>[0, 1, 2, 1]</code>
+<ul>
+<li><code>countArr[1] = 1</code> （数字 1 出现 1 次）</li>
+<li><code>countArr[2] = 2</code> （数字 2 出现 2 次）</li>
+<li><code>countArr[3] = 1</code> （数字 3 出现 1 次）</li>
+</ul>
+</li>
+</ul>
+<p>寄了</p>
+<h5 id="第五眼">第五眼</h5>
+<p>看看洋人怎么写的</p>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">const</span> frequencyArray = (<span class="keyword">new</span> <span class="title class_">Array</span>(<span class="number">100</span>)).<span class="title function_">fill</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">const</span> length = arr.<span class="property">length</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        frequencyArray[arr[i]] += <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> frequencyArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code> frequencyArray[arr[i]] += 1;</code>疑似有点天才了</p>
 
             </div>
         
@@ -515,19 +538,10 @@
     
 <nav id="article-nav">
     
-        <a href="/2024/10/07/10-7/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    10-7
-                
-            </div>
-        </a>
     
-    
-        <a href="/2024/10/07/Flipping-bits/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2024/10/07/%E5%89%8D%E8%A8%80/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">Flipping bits</div>
+            <div class="article-nav-title">前言</div>
         </a>
     
 </nav>

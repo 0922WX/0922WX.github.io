@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-10-10T11:58:30.678Z</updated>
+  <updated>2024-10-11T13:08:28.530Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -17,13 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Object.key,value和entries</title>
+    <link href="https://0922wx.github.io/2024/10/11/Object-key-value%E5%92%8Centries/"/>
+    <id>https://0922wx.github.io/2024/10/11/Object-key-value%E5%92%8Centries/</id>
+    <published>2024-10-11T12:57:37.000Z</published>
+    <updated>2024-10-11T13:08:28.530Z</updated>
+    
+    <content type="html"><![CDATA[<p>key和value，键值对罢了</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;tom&quot;</span>,<span class="attr">age</span>:<span class="number">11</span>&#125;); <span class="comment">// [&quot;name&quot;,&quot;age&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">values</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;tom&quot;</span>,<span class="attr">age</span>:<span class="number">11</span>&#125;) <span class="comment">// [&#x27;tom&#x27;,11]</span></span><br></pre></td></tr></table></figure><p>主要是记录一下entries()</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;tom&quot;</span>,<span class="attr">age</span>:<span class="number">11</span>&#125;)<span class="comment">//[Array(2),Arrar(2)]</span></span><br></pre></td></tr></table></figure><p>我去，二维数组</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="comment">//[Array(2),Arrar(2),Arrar(2)]</span></span><br></pre></td></tr></table></figure><p>手工返回键值对组成的数组，第一个元素是属性的键（始终是字符串），第二个元素是属性值。</p><p>那么绝配map了</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">foo</span>: <span class="string">&quot;bar&quot;</span>, <span class="attr">baz</span>: <span class="number">42</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>(obj));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map); <span class="comment">// 输出: Map(2) &#123;&quot;foo&quot; =&gt; &quot;bar&quot;, &quot;baz&quot; =&gt; 42&#125;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;key和value，键值对罢了&lt;/p&gt;
+&lt;figure class=&quot;highlight typescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Js有的没的" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>神秘小厂</title>
     <link href="https://0922wx.github.io/2024/10/10/%E7%A5%9E%E7%A7%98%E5%B0%8F%E5%8E%82/"/>
     <id>https://0922wx.github.io/2024/10/10/%E7%A5%9E%E7%A7%98%E5%B0%8F%E5%8E%82/</id>
     <published>2024-10-10T11:51:17.000Z</published>
-    <updated>2024-10-10T11:58:30.678Z</updated>
+    <updated>2024-10-10T12:01:25.695Z</updated>
     
-    <content type="html"><![CDATA[<h5 id="面面相觑">面面相觑</h5><p>1.vue的生命周期(没用过vue)</p><p>2.小程序做过吗(没有)</p><p>3.css2和css3有什么区别</p><p>4.怎么水平居中</p><p>5.react怎么父传子</p><p>6.聊天室用了什么技术聊天(websocket)</p><p>反问:</p><p>主要用vue，原生小程序开发</p>]]></content>
+    <content type="html"><![CDATA[<h5 id="面面相觑">面面相觑</h5><p>1.vue的生命周期(没用过vue)</p><p>2.小程序做过吗(没有)</p><p>3.css2和css3有什么区别</p><p>4.怎么水平居中</p><p>5.es6新增了什么</p><p>6.==和===的区别</p><p>7.react怎么父传子</p><p>8.聊天室用了什么技术聊天(websocket)</p><p>反问:</p><p>主要用vue，原生小程序开发</p>]]></content>
     
     
       
@@ -33,8 +58,8 @@
 &lt;p&gt;2.小程序做过吗(没有)&lt;/p&gt;
 &lt;p&gt;3.css2和css3有什么区别&lt;/p&gt;
 &lt;p&gt;4.怎么水平居中&lt;/p&gt;
-&lt;p&gt;5.react怎么父传子&lt;/p&gt;
-&lt;p&gt;6.聊天室用了</summary>
+&lt;p&gt;5.es6新增了什么&lt;/p&gt;
+&lt;p&gt;6.==和===的</summary>
       
     
     
@@ -505,33 +530,6 @@
     <category term="组件库" scheme="https://0922wx.github.io/categories/%E9%A1%B9%E7%9B%AE/%E7%BB%84%E4%BB%B6%E5%BA%93/"/>
     
     <category term="事前准备" scheme="https://0922wx.github.io/categories/%E9%A1%B9%E7%9B%AE/%E7%BB%84%E4%BB%B6%E5%BA%93/%E4%BA%8B%E5%89%8D%E5%87%86%E5%A4%87/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>完成imagekit认证前置</title>
-    <link href="https://0922wx.github.io/2024/10/01/%E5%AE%8C%E6%88%90imagekit%E8%AE%A4%E8%AF%81%E5%89%8D%E7%BD%AE/"/>
-    <id>https://0922wx.github.io/2024/10/01/%E5%AE%8C%E6%88%90imagekit%E8%AE%A4%E8%AF%81%E5%89%8D%E7%BD%AE/</id>
-    <published>2024-10-01T06:39:43.000Z</published>
-    <updated>2024-10-01T07:00:02.013Z</updated>
-    
-    <content type="html"><![CDATA[<p>依据ImageKit的官方文档，我们需要在后台SDK传入API公钥，私钥和URL端点，前面已经配置好了。</p><p>但是，想要将图片上传到imagekit的媒体库，还需要后端服务器用私有密钥对请求进行验证</p><p>怎么验证？</p><p>使用imagekit-nestjs封装好的方法</p><p>我这里新建了user模块</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nest g resource <span class="keyword">user</span></span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//user.controller.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Controller</span>, <span class="title class_">Get</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">UserService</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./user.service&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Controller</span>(<span class="string">&#x27;user&#x27;</span>)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">UserController</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"></span></span><br><span class="line"><span class="params">    <span class="keyword">private</span> <span class="keyword">readonly</span> <span class="attr">userService</span>: <span class="title class_">UserService</span></span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="meta">@Get</span>(<span class="string">&#x27;keys&#x27;</span>)</span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">getImageKitKeys</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">userService</span>.<span class="title function_">getAuthParameters</span>();</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//user.service.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Injectable</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ImageKitService</span> &#125; <span class="keyword">from</span> <span class="string">&quot;imagekit-nestjs&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">UserService</span> &#123;</span><br><span class="line">  <span class="title function_">constructor</span>(<span class="params"><span class="keyword">private</span> <span class="keyword">readonly</span> <span class="attr">imageKitService</span>: <span class="title class_">ImageKitService</span></span>) &#123;&#125; <span class="comment">// 通过构造函数注入 ConfigService</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">async</span> <span class="title function_">getAuthParameters</span>(<span class="params"></span>)&#123;</span><br><span class="line">     <span class="comment">// 获取 ImageKit 的认证参数</span></span><br><span class="line">     <span class="keyword">const</span> keys = <span class="keyword">await</span> <span class="variable language_">this</span>.<span class="property">imageKitService</span>.<span class="title function_">getAuthenticationParameters</span>();</span><br><span class="line">     <span class="keyword">return</span> keys; <span class="comment">// 返回密钥</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>开启跨域</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//main.ts</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">NestFactory</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/core&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">AppModule</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./app.module&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">bootstrap</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> app = <span class="keyword">await</span> <span class="title class_">NestFactory</span>.<span class="title function_">create</span>(<span class="title class_">AppModule</span>);</span><br><span class="line">  app.<span class="title function_">enableCors</span>();</span><br><span class="line">  <span class="keyword">await</span> app.<span class="title function_">listen</span>(<span class="number">3005</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">bootstrap</span>();</span><br></pre></td></tr></table></figure><p>启动服务</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nest <span class="keyword">start</span></span><br></pre></td></tr></table></figure><p>根据官方文档所说，如果成功的话会返回三个参数</p><p>用postman试一下</p><h1><strong>完成!</strong></h1><p>寥寥数笔，花了我三个多小时🫤</p><h1>参考</h1><p><a href="https://github.com/CodeVisionEvgen/imagekit-nestjs">CodeVisionEvgen/imagekit-nestjs: Imagekit nestjs module (github.com)</a></p><p><a href="https://imagekit.io/docs/integration/react">React (imagekit.io)</a></p><p><a href="https://imagekit.io/docs/api-keys#private-key">API keys (imagekit.io)</a></p><p><a href="https://juejin.cn/book/7226988578700525605">Nest 通关秘籍 - zxg_神说要有光 - 掘金小册 (juejin.cn)</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;依据ImageKit的官方文档，我们需要在后台SDK传入API公钥，私钥和URL端点，前面已经配置好了。&lt;/p&gt;
-&lt;p&gt;但是，想要将图片上传到imagekit的媒体库，还需要后端服务器用私有密钥对请求进行验证&lt;/p&gt;
-&lt;p&gt;怎么验证？&lt;/p&gt;
-&lt;p&gt;使用imagekit-n</summary>
-      
-    
-    
-    
-    <category term="项目" scheme="https://0922wx.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
-    
-    <category term="表情包制作" scheme="https://0922wx.github.io/categories/%E9%A1%B9%E7%9B%AE/%E8%A1%A8%E6%83%85%E5%8C%85%E5%88%B6%E4%BD%9C/"/>
     
     
   </entry>

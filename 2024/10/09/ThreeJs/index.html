@@ -17,7 +17,7 @@
 <meta property="og:description" content="三要素  场景 Scene       容器 相机 Camera    观察 渲染器 Render   组合  起步 随便找一个文件夹.yarn init,然后在设置里面写: 123&quot;scripts&quot;: &#123;   &quot;dev&quot;: &quot;vite&quot; &#125;, 然后yarn add -D vite yarn add -D three">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-09T10:40:57.000Z">
-<meta property="article:modified_time" content="2024-10-09T11:19:55.950Z">
+<meta property="article:modified_time" content="2024-10-13T13:28:34.072Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -274,6 +274,15 @@
                         </a>
                          <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/27/%E8%BF%AA%E7%81%AB%E4%B8%80%E9%9D%A2/">迪火一面</a></li>  <li class="file"><a href="/2024/10/10/%E7%A5%9E%E7%A7%98%E5%B0%8F%E5%8E%82/">神秘小厂</a></li>  </ul> 
                     </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            面试题
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/13/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></li>  </ul> 
+                    </li> 
                      </ul> 
                     </li> 
                     
@@ -297,7 +306,7 @@
                             &nbsp;
                             2024年
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -538,6 +547,7 @@
 <p>东西都有了，那要怎么才能看到呢？</p>
 <p><code>document.body.appendChild(renderer.domElement);</code></p>
 <p>获取camera元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	<span class="keyword">const</span> scene = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Scene</span>();</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建相机</span></span><br><span class="line">	<span class="keyword">const</span> camera = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">PerspectiveCamera</span>(<span class="number">45</span>, <span class="variable language_">window</span>.<span class="property">innerWidth</span> / <span class="variable language_">window</span>.<span class="property">innerHeight</span>, <span class="number">0.1</span>, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//设置相机位置</span></span><br><span class="line">	camera.<span class="property">position</span>.<span class="property">z</span> = <span class="number">3</span></span><br><span class="line">	camera.<span class="property">position</span>.<span class="property">y</span> = <span class="number">2</span></span><br><span class="line">	camera.<span class="title function_">lookAt</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">	<span class="comment">//创建渲染器</span></span><br><span class="line">	<span class="keyword">const</span> renderer = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">WebGLRenderer</span>();</span><br><span class="line">	renderer.<span class="title function_">setSize</span>(<span class="variable language_">window</span>.<span class="property">innerWidth</span>, <span class="variable language_">window</span>.<span class="property">innerHeight</span>);</span><br><span class="line">	<span class="variable language_">document</span>.<span class="property">body</span>.<span class="title function_">appendChild</span>(renderer.<span class="property">domElement</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">const</span> cube = <span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">Mesh</span>(</span><br><span class="line">		<span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">BoxGeometry</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">		<span class="keyword">new</span> <span class="variable constant_">THREE</span>.<span class="title class_">MeshBasicMaterial</span>()</span><br><span class="line">	)</span><br><span class="line">	scene.<span class="title function_">add</span>(cube)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">animate</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="title function_">requestAnimationFrame</span>(animate);</span><br><span class="line">	cube.<span class="property">rotation</span>.<span class="property">x</span> += <span class="number">0.01</span>;</span><br><span class="line">	cube.<span class="property">rotation</span>.<span class="property">y</span> += <span class="number">0.01</span>;</span><br><span class="line">	renderer.<span class="title function_">render</span>(scene, camera);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">animate</span>();</span><br></pre></td></tr></table></figure>
 
             </div>
         

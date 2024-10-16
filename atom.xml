@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-10-13T09:38:15.467Z</updated>
+  <updated>2024-10-16T07:34:08.318Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>理灵文化</title>
+    <link href="https://0922wx.github.io/2024/10/14/%E7%90%86%E7%81%B5%E6%96%87%E5%8C%96/"/>
+    <id>https://0922wx.github.io/2024/10/14/%E7%90%86%E7%81%B5%E6%96%87%E5%8C%96/</id>
+    <published>2024-10-14T08:36:42.000Z</published>
+    <updated>2024-10-16T07:34:08.318Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="汗流浃背">汗流浃背</h4><h5 id="汗流浃背-v2">汗流浃背</h5><p>甚至不小心鸽了一个多小时</p><p>1.介绍js数组方法，数组遍历方法的相关区别</p><p>2.react常用hook</p><p>3.css居中</p><p>4.ts工具类型</p><p>5.== 和 === 区别</p><p>6.filter 和 find 区别</p><p>7.语义化标签用处，怎么用</p><p>8.interface和type区别</p><p>9.学习路线，怎么学习的，看谁的博客</p><p>10.<code>display:none</code>和<code>opacity: 0</code>的区别</p><p>11.严格模式会渲染两次吗</p><p>项目相关 (失忆完了)</p><p>五天内</p><h5 id="TS工具类型">TS工具类型</h5><p>一种在类型别名的基础上，基于泛型去动态创建新类型</p><p><code>Partial</code>：将所有类型设置为可选<code>Partial&lt;A&gt;</code></p><p><code>Required</code>:所有属性必选</p><p><code>readonly</code>：将属性标记为只读</p><p><code>Record</code>:声明属性名还未确定的接口类型</p><blockquote><p><code>Record&lt;K,T&gt;</code>构造具有给定类型<code>T</code>的一组属性<code>K</code>的类型。在将一个类型的属性映射到另一个类型的属性时，<code>Record</code>非常方便。</p></blockquote><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">UserProps</span> = <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;job&#x27;</span> | <span class="string">&#x27;email&#x27;</span>;</span><br><span class="line"><span class="comment">// 等价于你一个个实现这些属性了</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = <span class="title class_">Record</span>&lt;<span class="title class_">UserProps</span>, <span class="built_in">string</span>&gt;;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">user</span>: <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;John Doe&#x27;</span>,</span><br><span class="line">  <span class="attr">job</span>: <span class="string">&#x27;fe-developer&#x27;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&#x27;john.doe@example.com&#x27;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p><code>Pick</code>:接收一个对象类型，以及一个字面量类型组成的联合类型，这个联合类型只能是由对象类型的属性名组成的。它会对这个对象类型进行裁剪，只保留你传入的属性名组成的部分</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">  <span class="attr">email</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">phone</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 只提取其中的 name 与 age 信息</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserBasicInfo</span> = <span class="title class_">Pick</span>&lt;<span class="title class_">User</span>, <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;age&#x27;</span>&gt;;</span><br></pre></td></tr></table></figure><p><code>Omit</code>:就是 Pick 类型的另一面，它的入参和 Pick 类型一致，但效果却是相反的——它会移除传入的属性名的部分，只保留剩下的部分作为新的对象类型</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">User</span> = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">age</span>: <span class="built_in">number</span>;</span><br><span class="line">  <span class="attr">email</span>: <span class="built_in">string</span>;</span><br><span class="line">  <span class="attr">phone</span>: <span class="built_in">string</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 只移除 phone 属性</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">UserWithoutPhone</span> = <span class="title class_">Omit</span>&lt;<span class="title class_">User</span>, <span class="string">&#x27;phone&#x27;</span>&gt;;</span><br></pre></td></tr></table></figure><p><code>Exclude</code> 和<code>Extract</code>:差集和交集</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">UserProps</span> = <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;age&#x27;</span> | <span class="string">&#x27;email&#x27;</span> | <span class="string">&#x27;phone&#x27;</span> | <span class="string">&#x27;address&#x27;</span>;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">RequiredUserProps</span> = <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;email&#x27;</span>;</span><br><span class="line"><span class="comment">// OptionalUserProps = UserProps - RequiredUserProps</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">OptionalUserProps</span> = <span class="title class_">Exclude</span>&lt;<span class="title class_">UserProps</span>, <span class="title class_">RequiredUserProps</span>&gt;;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">optionalUserProps</span>: <span class="title class_">OptionalUserProps</span> = <span class="string">&#x27;age&#x27;</span>; <span class="comment">// &#x27;age&#x27; | &#x27;phone&#x27; | &#x27;address&#x27;;</span></span><br></pre></td></tr></table></figure><p>Extract</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> <span class="title class_">UserProps</span> = <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;age&#x27;</span> | <span class="string">&#x27;email&#x27;</span> | <span class="string">&#x27;phone&#x27;</span> | <span class="string">&#x27;address&#x27;</span>;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">RequiredUserProps</span> = <span class="string">&#x27;name&#x27;</span> | <span class="string">&#x27;email&#x27;</span>;</span><br><span class="line"><span class="keyword">type</span> <span class="title class_">RequiredUserPropsOnly</span> = <span class="title class_">Extract</span>&lt;<span class="title class_">UserProps</span>, <span class="title class_">RequiredUserProps</span>&gt;;</span><br><span class="line"><span class="keyword">const</span> <span class="attr">requiredUserPropsOnly</span>: <span class="title class_">RequiredUserPropsOnly</span> = <span class="string">&#x27;name&#x27;</span>; <span class="comment">// &#x27;name&#x27; | &#x27;email&#x27;;</span></span><br></pre></td></tr></table></figure><h5 id="display-none-和-opacity-0二者的区别">display none 和 opacity 0二者的区别</h5><p><code>display:none</code></p><ul><li>完全隐藏HTML元素并从页面布局移除他，不会显示在页面上，也不会占据空间，不会响应任何交互事件</li></ul><p><code>opacity:0</code></p><ul><li>完全透明，但元素仍然存在于页面布局中，并保持原始大小和位置，但对用户来说不可见，仍然可以接收交互事件，包括键盘和屏幕阅读器事件。</li></ul><h6 id="无障碍性考虑">无障碍性考虑</h6><p><code>display:none</code>：</p><ul><li><strong>可见性</strong>：<code>display: none</code> 隐藏了元素，对于所有用户，包括屏幕阅读器用户，它都是不可见的。</li><li><strong>交互性</strong>：由于元素被隐藏，因此不会响应键盘或屏幕阅读器事件。这可能导致对于视力障碍者而言，无法访问其中的内容或功能。</li><li><strong>语义</strong>：如果使用 <code>display: none</code> 隐藏了某些重要内容，屏幕阅读器无法访问这些内容，因此会导致可访问性问题。</li></ul><p><code>opacity: 0</code>:</p><ul><li><strong>可见性</strong>：<code>opacity: 0</code> 使元素不可见，但仍然存在于页面布局中，因此对于视力障碍者来说，它是可见的（虽然不可见，但占据页面空间）。</li><li><strong>交互性</strong>：元素保持交互性，因此可以响应键盘和屏幕阅读器事件，使其内容和功能可访问。</li><li><strong>语义</strong>：使用 <code>opacity: 0</code> 可以确保屏幕阅读器能够访问元素的内容，以提供更好的可访问性。</li></ul><h6 id="额外">额外</h6><table><thead><tr><th></th><th><strong>display: none</strong></th><th><strong>visibility: hidden</strong></th><th style="text-align:center"><strong>opacity: 0</strong></th></tr></thead><tbody><tr><td><strong>是否占有空间</strong></td><td>×</td><td>√</td><td style="text-align:center">√</td></tr><tr><td><strong>是否可以进行DOM事件监听</strong></td><td>×</td><td>×</td><td style="text-align:center">√</td></tr><tr><td><strong>是否可以点击</strong></td><td>×</td><td>×</td><td style="text-align:center">√</td></tr><tr><td><strong>是否可以被子元素继承</strong></td><td>×</td><td>√</td><td style="text-align:center">√</td></tr><tr><td><strong>子元素能否通过改变属性值来改变继承自父亲的隐藏状态</strong></td><td>×</td><td>√</td><td style="text-align:center">×</td></tr></tbody></table><p><strong>visibility: hidden</strong>  是什么？</p><p><strong>display: none</strong>： 从这个世界消失了, 不存在了； <strong>opacity: 0</strong>： 视觉上隐身了, 看不见, 可以触摸得到； <strong>visibility: hidden</strong>： 视觉和物理上都隐身了, 看不见也摸不到, 但是存在的。</p><p>来源：<a href="https://juejin.cn/post/6844904202867572749">opacity: 0、visibility: hidden、display: none 优劣和适用场景，以及隐藏元素的几种方法 - 掘金 (juejin.cn)</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;汗流浃背&quot;&gt;汗流浃背&lt;/h4&gt;
+&lt;h5 id=&quot;汗流浃背-v2&quot;&gt;汗流浃背&lt;/h5&gt;
+&lt;p&gt;甚至不小心鸽了一个多小时&lt;/p&gt;
+&lt;p&gt;1.介绍js数组方法，数组遍历方法的相关区别&lt;/p&gt;
+&lt;p&gt;2.react常用hook&lt;/p&gt;
+&lt;p&gt;3.css居中&lt;/p&gt;
+&lt;p&gt;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="面试" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>面试题</title>
@@ -503,32 +533,6 @@
     <category term="HackerRank三个月挑战" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/"/>
     
     <category term="第一周" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>指定增删改链表思路</title>
-    <link href="https://0922wx.github.io/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/"/>
-    <id>https://0922wx.github.io/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/</id>
-    <published>2024-10-06T14:26:22.000Z</published>
-    <updated>2024-10-06T14:36:55.548Z</updated>
-    
-    <content type="html"><![CDATA[<p>连续做了HackerRank的链表题</p><p>怎么找到给定位置的节点前一项？(position以1开始计数，一般参数里有)</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> currentNode = list</span><br><span class="line"><span class="keyword">let</span> currentPosition = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span>(currentNode !==<span class="literal">null</span> &amp;&amp; currentPosition &lt; position -<span class="number">1</span>)&#123;</span><br><span class="line">currentNode = currentNode.<span class="property">next</span></span><br><span class="line">currentPosition++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>增删改都是这样</p><p>记得判断链表为空的情况</p><p>记得判断给定位置在开头的情况</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (position === <span class="number">0</span>) &#123;</span><br><span class="line">     <span class="comment">//xxxx</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;连续做了HackerRank的链表题&lt;/p&gt;
-&lt;p&gt;怎么找到给定位置的节点前一项？(position以1开始计数，一般参数里有)&lt;/p&gt;
-&lt;figure class=&quot;highlight typescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="https://0922wx.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    <category term="链表" scheme="https://0922wx.github.io/categories/%E7%AE%97%E6%B3%95/%E9%93%BE%E8%A1%A8/"/>
     
     
   </entry>

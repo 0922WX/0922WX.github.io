@@ -3,21 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>浅拷贝与深拷贝 | WX&#39;sMajula</title>
+    <title>10-16折腾一下自动化部署 | WX&#39;sMajula</title>
     
     
-        <meta name="keywords" content="浅拷贝与深拷贝" />
+        <meta name="keywords" content="10-16折腾一下自动化部署" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="记录于7月3号，语雀 首先明确JS的数据类型能分成基本数字类型和引用类型 1234let a &#x3D;10;let b &#x3D;a;a &#x3D;100;console.log(b); &#x2F;&#x2F;结果为10 基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。 1234let a &#x3D;[1,2,3,4];let b &#x3D;a;a[0] &#x3D;1">
+    <meta name="description" content="没错，目前每次发表都需要手动编译再推送，还有一个缺点是hexo源码本身没有云端备份（虽然不知道到底有什么后果）。 听说引入Github Action工作流后就可以交给Github自动完成了 点开仓库的settings -&gt; Pages,找到Build and deployment下Source，换成Github Actions。提示使用jekyll，点击jekyll的Configure，自动">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅拷贝与深拷贝">
-<meta property="og:url" content="https://0922wx.github.io/2024/08/28/Deep-and-Shallow-Copy/index.html">
+<meta property="og:title" content="10-16折腾一下自动化部署">
+<meta property="og:url" content="https://0922wx.github.io/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="WX&#39;sMajula">
-<meta property="og:description" content="记录于7月3号，语雀 首先明确JS的数据类型能分成基本数字类型和引用类型 1234let a &#x3D;10;let b &#x3D;a;a &#x3D;100;console.log(b); &#x2F;&#x2F;结果为10 基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a&#x3D;10，b&#x3D;10，两者相互独立，所以a值的修改并不影响b。 1234let a &#x3D;[1,2,3,4];let b &#x3D;a;a[0] &#x3D;1">
+<meta property="og:description" content="没错，目前每次发表都需要手动编译再推送，还有一个缺点是hexo源码本身没有云端备份（虽然不知道到底有什么后果）。 听说引入Github Action工作流后就可以交给Github自动完成了 点开仓库的settings -&gt; Pages,找到Build and deployment下Source，换成Github Actions。提示使用jekyll，点击jekyll的Configure，自动">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-08-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-09-02T12:11:48.087Z">
+<meta property="article:published_time" content="2024-10-16T07:43:10.000Z">
+<meta property="article:modified_time" content="2024-10-16T08:08:32.686Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -214,20 +214,20 @@
                      </ul> 
                     </li> 
                     
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             前端
                         </a>
                          <ul class="unstyled" id="tree" > 
-                    <li class="directory open">
+                    <li class="directory">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder-open"></i>
+                            <i class="fa fa-folder"></i>
                             &nbsp;
                             Js有的没的
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file active"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  <li class="file"><a href="/2024/10/11/Object-key-value%E5%92%8Centries/">Object.key,value和entries</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  <li class="file"><a href="/2024/10/11/Object-key-value%E5%92%8Centries/">Object.key,value和entries</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -286,27 +286,27 @@
                      </ul> 
                     </li> 
                     
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             日常
                         </a>
                          <ul class="unstyled" id="tree" > 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             流水账
                         </a>
                          <ul class="unstyled" id="tree" > 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             2024年
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  <li class="file"><a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">10-16折腾一下自动化部署</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  <li class="file active"><a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">10-16折腾一下自动化部署</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -482,7 +482,7 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main"><article id="post-Deep-and-Shallow-Copy" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-10-16折腾一下自动化部署" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -492,15 +492,15 @@
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/">Js有的没的</a>
+        <a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8/">日常</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/">流水账</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/2024%E5%B9%B4/">2024年</a>
     </div>
 
                         
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2024/08/28/Deep-and-Shallow-Copy/">
-            <time datetime="2024-08-27T16:00:00.000Z" itemprop="datePublished">2024-08-28</time>
+        <a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">
+            <time datetime="2024-10-16T07:43:10.000Z" itemprop="datePublished">2024-10-16</time>
         </a>
     </div>
 
@@ -515,7 +515,7 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            浅拷贝与深拷贝
+            10-16折腾一下自动化部署
         </h1>
     
 
@@ -528,28 +528,11 @@
             
         
         
-            <p>记录于7月3号，语雀</p>
-<p><strong>首先明确JS的数据类型能分成基本数字类型和引用类型</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =<span class="number">10</span>;</span><br><span class="line"><span class="keyword">let</span> b =a;</span><br><span class="line">a =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//结果为10</span></span><br></pre></td></tr></table></figure>
-<p>基本数字类型之间拷贝传递的就是值。在栈中，声明一个变量a，再将a赋值给b，此时栈中a=10，b=10，两者相互独立，所以a值的修改并不影响b。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> b =a;</span><br><span class="line">a[<span class="number">0</span>] =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b); <span class="comment">//结果为[100,2,3,4]</span></span><br></pre></td></tr></table></figure>
-<p>我们修改了数组a，却也影响了数组b，<strong>引用类型的值(栈中)存放的并非数值本身，而是内存地址，仅拷贝地址，就是浅拷贝</strong>。</p>
-<h1>一些深拷贝的方法</h1>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> b =[...a];</span><br><span class="line">a[<span class="number">0</span>] =<span class="number">100</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line"><span class="comment">//b:[1,2,3,4]</span></span><br><span class="line"><span class="comment">//a:[100,2,3,4]</span></span><br></pre></td></tr></table></figure>
-<p>从内存里面开辟一块新的空间存放数组，利用展开运算符把a的每一项存入数组中，<strong>虽然有效，然有其局限，遇上多维数组就不管用了</strong>。</p>
-<h2 id="为什么不管用？">为什么不管用？</h2>
-<p>二维数组内的数组仍然是引用类型，对应另一个地址存储了这个数组。虽然我们经过了拷贝，在堆里开辟一个新空间存储给b，但是001中的二维数组存的就是一个地址，所以新开辟的空间拿到的也是一个地址。</p>
-<p><strong>所以我们要想办法实现多层拷贝，各自开辟独立空间，互不干扰</strong>。</p>
-<p>如果是基本类型数据，他们的拷贝就是深拷贝；对于引用类型数据，不论数据是一层还是多层，只要把内部的引用类型数据全部独立开辟内存空间，数据完全互不干扰，就是深拷贝，只要有共用数据就是浅拷贝。</p>
-<h1>多层拷贝</h1>
-<h2 id="常用方法-Json格式转化">常用方法:Json格式转化</h2>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,[<span class="number">5</span>,<span class="number">6</span>,&#123;<span class="attr">name</span>:<span class="string">&#x27;wx&#x27;</span>&#125;]];</span><br><span class="line"><span class="keyword">let</span> b =<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title function_">stringify</span>(a));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> b);</span><br><span class="line"><span class="comment">//[1,2,3,4[5,6,&#123;name:&#x27;wx&#x27;&#125;]]</span></span><br><span class="line"><span class="comment">//object</span></span><br></pre></td></tr></table></figure>
-<p>为数不多的缺点就是无法转化拷贝函数类型(这真的是我要考虑的东西吗)。</p>
-<h2 id="所以说，接下来就是实现函数的拷贝。">所以说，接下来就是实现函数的拷贝。</h2>
-<p>如果没有嵌套数据，使用展开运算符即可解决，能解决的原因是这里修改一个函数等于重写一个函数，重写就会在内存里开辟一个新空间。所以，如果我们的数据里没有嵌套数组和对象，又有函数，是可以直接用展开运算符来拷贝的(好用，爱用，虽然我还没有实际用到过)。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a =&#123;</span><br><span class="line">        <span class="attr">name</span>:<span class="string">&#x27;wx&#x27;</span>,</span><br><span class="line">        <span class="attr">age</span>:<span class="number">18</span>,</span><br><span class="line">        <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">let</span> b =&#123;...a&#125;;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;a为:&quot;</span>,a);  <span class="comment">//&#123;name:&#x27;wx&#x27;,age:18,fn:f&#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;b为:&quot;</span>,b);  <span class="comment">//&#123;name:&#x27;wx&#x27;,age:18,fn:f&#125;</span></span><br></pre></td></tr></table></figure>
-<h1>手写一个递归实现相对完美的深拷贝</h1>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">deepClone</span>(<span class="params">oldData</span>)&#123;</span><br><span class="line">  <span class="comment">//进入循坏条件为数组或者对象,具体是什么得继续判断</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">typeof</span> oldData === <span class="string">&#x27;object&#x27;</span> &amp;&amp; oldData !== <span class="literal">null</span>)&#123;</span><br><span class="line">    <span class="comment">//如果是数组就新建一个新数组，否则就新建一个对象</span></span><br><span class="line">    <span class="keyword">let</span> res =<span class="title class_">Array</span>.<span class="title function_">isArray</span>(oldData)? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> k <span class="keyword">in</span> oldData)&#123;</span><br><span class="line">      res[k] = <span class="title function_">deepClone</span>(oldData[k]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> oldData;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <p>没错，目前每次发表都需要手动编译再推送，还有一个缺点是hexo源码本身没有云端备份（虽然不知道到底有什么后果）。</p>
+<p>听说引入<code>Github Action</code>工作流后就可以交给Github自动完成了</p>
+<p>点开仓库的settings -&gt; Pages,找到Build and deployment下Source，换成Github Actions。提示使用jekyll，点击jekyll的Configure，自动生成他的actions，然后点击右上角commit changes，直接点击提交，就创建完毕了。</p>
+<p>弄完了，那到底有什么区别呢</p>
+<p>我不知道</p>
 
             </div>
         
@@ -562,19 +545,10 @@
     
 <nav id="article-nav">
     
-        <a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    快慢指针
-                
-            </div>
-        </a>
     
-    
-        <a href="/2024/08/28/%E5%88%9D%E8%A1%B7/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2024/10/14/%E7%90%86%E7%81%B5%E6%96%87%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title"></div>
+            <div class="article-nav-title">理灵文化</div>
         </a>
     
 </nav>

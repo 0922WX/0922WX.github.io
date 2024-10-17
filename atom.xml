@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-10-16T08:08:32.686Z</updated>
+  <updated>2024-10-17T14:55:50.119Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一下vs插件</title>
+    <link href="https://0922wx.github.io/2024/10/17/%E8%AE%B0%E4%B8%80%E4%B8%8Bvs%E6%8F%92%E4%BB%B6/"/>
+    <id>https://0922wx.github.io/2024/10/17/%E8%AE%B0%E4%B8%80%E4%B8%8Bvs%E6%8F%92%E4%BB%B6/</id>
+    <published>2024-10-17T14:46:51.000Z</published>
+    <updated>2024-10-17T14:55:50.119Z</updated>
+    
+    <content type="html"><![CDATA[<p>12</p><ul><li>别名路径跳转</li><li>any-rule</li><li>Bearded Theme</li><li>CSS Modules</li><li>Error Lens</li><li>es6-string-html</li><li>ES7+ React/Redux/React-Native snippets</li><li>ESLint</li><li>Fitten Code: Faster and Better AI Assistant</li><li>GitLens — Git supercharged</li><li>HTML CSS Support</li><li>JS JSX Snippets</li><li>json</li><li>Less IntelliSense</li><li>Live Preview</li><li>Live Server</li><li>Move TS and JS - Move TypeScript/JS files and update relative imports<code>v1.</code></li><li>Native Debug</li><li>open in browser</li><li>Path Autocomplete</li><li>Path Intellisense</li><li>Prettier - Code formatter</li><li>Prisma</li><li>px to rem &amp; rpx &amp; vw (cssrem)</li><li>React</li><li>React Redux Toolkit RTK Query Snippets</li><li>Tailwind CSS IntelliSense</li><li>Thunder Client</li><li>Time Master</li><li>TypeScript Importer</li><li>vscode-icons</li><li>Three.JS Snippets</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;12&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;别名路径跳转&lt;/li&gt;
+&lt;li&gt;any-rule&lt;/li&gt;
+&lt;li&gt;Bearded Theme&lt;/li&gt;
+&lt;li&gt;CSS Modules&lt;/li&gt;
+&lt;li&gt;Error Lens&lt;/li&gt;
+&lt;li&gt;es6-string-html&lt;/li&gt;
+&lt;l</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="vscode" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/vscode/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>10-16折腾一下自动化部署</title>
@@ -512,30 +544,6 @@
     <category term="HackerRank三个月挑战" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/"/>
     
     <category term="第二周" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Sparse Arrays 稀疏阵列</title>
-    <link href="https://0922wx.github.io/2024/10/07/Sparse-Arrays/"/>
-    <id>https://0922wx.github.io/2024/10/07/Sparse-Arrays/</id>
-    <published>2024-10-07T05:34:19.000Z</published>
-    <updated>2024-10-07T07:05:23.533Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.hackerrank.com/challenges/three-month-preparation-kit-sparse-arrays/problem?h_l=interview&amp;isFullScreen=true&amp;playlist_slugs%5B%5D%5B%5D=preparation-kits&amp;playlist_slugs%5B%5D%5B%5D=three-month-preparation-kit&amp;playlist_slugs%5B%5D%5B%5D=three-month-week-one">Sparse Arrays | HackerRank</a></p><p>有一个输入字符串集合和一个查询字符串集合。对于每个查询字符串，确定它在输入字符串列表中出现的次数。返回结果数组。</p><p>Example</p><p>strings = [‘ab’,‘ab’,‘abc’]</p><p>queries = [‘ab’,‘abc’,'bc]</p><p>对于query，在返回数组result= [2,1,0]</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">matchingStrings</span>(<span class="params"><span class="attr">strings</span>: <span class="built_in">string</span>[], <span class="attr">queries</span>: <span class="built_in">string</span>[]</span>): <span class="built_in">number</span>[] &#123;</span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">let</span> <span class="attr">res</span>:<span class="built_in">number</span>[] = []</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> query <span class="keyword">of</span> queries)&#123;</span><br><span class="line">        <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> strings)&#123;</span><br><span class="line">            <span class="keyword">if</span>(item === query)&#123;</span><br><span class="line">                count++</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/three-month-preparation-kit-sparse-arrays/problem?h_l=interview&amp;amp;isFullScreen=true&amp;amp;</summary>
-      
-    
-    
-    
-    <category term="HackerRank三个月挑战" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/"/>
-    
-    <category term="第一周" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
     
     
   </entry>

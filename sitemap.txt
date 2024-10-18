@@ -1,3 +1,4 @@
+https://0922wx.github.io/2024/10/18/Permuting-Two-Arrays%E6%9F%90%E7%A7%8D%E6%8E%92%E5%88%97/
 https://0922wx.github.io/2024/10/18/nest%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/
 https://0922wx.github.io/2024/10/17/%E8%AE%B0%E4%B8%80%E4%B8%8Bvs%E6%8F%92%E4%BB%B6/
 https://0922wx.github.io/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/
@@ -85,3 +86,4 @@ https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/vscode/
 https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E9%A2%98/
 https://0922wx.github.io/categories/%E5%90%8E%E7%AB%AF/
 https://0922wx.github.io/categories/%E5%90%8E%E7%AB%AF/nest/
+https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%B8%89%E5%91%A8/

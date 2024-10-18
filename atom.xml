@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-10-17T14:55:50.119Z</updated>
+  <updated>2024-10-18T11:29:08.391Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nest导入模块</title>
+    <link href="https://0922wx.github.io/2024/10/18/nest%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/"/>
+    <id>https://0922wx.github.io/2024/10/18/nest%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/</id>
+    <published>2024-10-18T11:07:43.000Z</published>
+    <updated>2024-10-18T11:29:08.391Z</updated>
+    
+    <content type="html"><![CDATA[<p>123</p><p>如果你想要在Amodule里使用Bmodule里的服务那么可以选择：</p><ol><li>在Bmodule里写入<code>exports:[BService]</code></li><li>在Amodule里写入<code>import:[Bmodule]</code></li></ol><p><strong>没错，第二次是导入module，而不是service</strong></p><p>这是最容易看错的</p><p>导入之后，有两种方式注入依赖</p><p>1.属性注入依赖</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">OrderService</span> &#123;</span><br><span class="line"><span class="comment">//依赖注入之属性注入共享的服务</span></span><br><span class="line">   <span class="meta">@Inject</span>(<span class="title class_">BService</span>)</span><br><span class="line">    <span class="keyword">private</span> <span class="attr">bService</span>:<span class="title class_">BService</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="title function_">getOrderDesc</span>():<span class="built_in">string</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> name = <span class="variable language_">this</span>.<span class="property">userService</span>.<span class="title function_">getUserName</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`Order for <span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>2.构造函数注入</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Injectable</span>()</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">OrderService</span> &#123;</span><br><span class="line">   <span class="title function_">constructor</span>(<span class="params"><span class="keyword">private</span> <span class="attr">userService</span>:<span class="title class_">UserService</span></span>)&#123;&#125;</span><br><span class="line">    <span class="title function_">getOrderDesc</span>():<span class="built_in">string</span>&#123;</span><br><span class="line">        <span class="keyword">const</span> name = <span class="variable language_">this</span>.<span class="property">userService</span>.<span class="title function_">getUserName</span>();</span><br><span class="line">        <span class="keyword">return</span> <span class="string">`Order for <span class="subst">$&#123;name&#125;</span>`</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="全局模块">全局模块</h4><p>用<code>@Global</code>装饰器声明就完事了（在module声明）</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Global</span>, <span class="title class_">Module</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;@nestjs/common&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">UserService</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./user.service&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">UserController</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./user.controller&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Global</span>()</span><br><span class="line"><span class="meta">@Module</span>(&#123;</span><br><span class="line">  <span class="attr">controllers</span>: [<span class="title class_">UserController</span>],</span><br><span class="line">  <span class="attr">providers</span>: [<span class="title class_">UserService</span>],</span><br><span class="line">  <span class="attr">exports</span>: [<span class="title class_">UserService</span>],</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> <span class="title class_">UserModule</span> &#123;&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;123&lt;/p&gt;
+&lt;p&gt;如果你想要在Amodule里使用Bmodule里的服务那么可以选择：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在Bmodule里写入&lt;code&gt;exports:[BService]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;在Amodule里写入&lt;code&gt;import:[B</summary>
+      
+    
+    
+    
+    <category term="后端" scheme="https://0922wx.github.io/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    <category term="nest" scheme="https://0922wx.github.io/categories/%E5%90%8E%E7%AB%AF/nest/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>记一下vs插件</title>
@@ -520,30 +548,6 @@
     <category term="HackerRank三个月挑战" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/"/>
     
     <category term="第一周" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%B8%80%E5%91%A8/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Lonely Integer</title>
-    <link href="https://0922wx.github.io/2024/10/07/Lonely-Integer/"/>
-    <id>https://0922wx.github.io/2024/10/07/Lonely-Integer/</id>
-    <published>2024-10-07T05:56:25.000Z</published>
-    <updated>2024-10-07T07:05:06.513Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.hackerrank.com/challenges/three-month-preparation-kit-lonely-integer/problem?isFullScreen=true&amp;h_l=interview&amp;playlist_slugs%5B%5D=preparation-kits&amp;playlist_slugs%5B%5D=three-month-preparation-kit&amp;playlist_slugs%5B%5D=three-month-week-two">Lonely Integer | HackerRank</a></p><p>给定一个整数数组，其中除一个元素外所有元素都出现两次，请找出唯一的元素。</p><p>用set做</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">lonelyinteger</span>(<span class="params"><span class="attr">a</span>: <span class="built_in">number</span>[]</span>): <span class="built_in">number</span> &#123;</span><br><span class="line">    <span class="comment">// Write your code here</span></span><br><span class="line">    <span class="keyword">const</span> numSet =<span class="keyword">new</span> <span class="title class_">Set</span>&lt;<span class="built_in">number</span>&gt;()</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">const</span> num <span class="keyword">of</span> a)&#123;</span><br><span class="line">        <span class="keyword">if</span>(numSet.<span class="title function_">has</span>(num))&#123;</span><br><span class="line">            numSet.<span class="title function_">delete</span>(num)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            numSet.<span class="title function_">add</span>(num)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Array</span>.<span class="title function_">from</span>(numSet)[<span class="number">0</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.hackerrank.com/challenges/three-month-preparation-kit-lonely-integer/problem?isFullScreen=true&amp;amp;h_l=interview&amp;amp</summary>
-      
-    
-    
-    
-    <category term="HackerRank三个月挑战" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/"/>
-    
-    <category term="第二周" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/"/>
     
     
   </entry>

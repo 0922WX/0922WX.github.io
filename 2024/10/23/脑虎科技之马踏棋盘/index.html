@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>脑虎科技之马踏棋盘 | WX&#39;sMajula</title>
+    
+    
+        <meta name="keywords" content="脑虎科技之马踏棋盘" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="这是一个著名的问题。在 8×8 的国际象棋棋盘上用一个马按照马步跳遍整个棋盘，要求每个格子都只跳到一次，最后回到出发点。 第一问 你的任务是实现一个网页来展示马踏棋盘的整个交互过程。需求描述如 下： 需求a.页面上有一个输入框 “start point”，用户可以输入马的起始位置。起始位置是用逗号隔开的 2 个整数。例如用户输入 4,4，下面右图的起始位置 1 就 是坐标(4,4) 需求b. 实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="脑虎科技之马踏棋盘">
+<meta property="og:url" content="https://0922wx.github.io/2024/10/23/%E8%84%91%E8%99%8E%E7%A7%91%E6%8A%80%E4%B9%8B%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/index.html">
+<meta property="og:site_name" content="WX&#39;sMajula">
+<meta property="og:description" content="这是一个著名的问题。在 8×8 的国际象棋棋盘上用一个马按照马步跳遍整个棋盘，要求每个格子都只跳到一次，最后回到出发点。 第一问 你的任务是实现一个网页来展示马踏棋盘的整个交互过程。需求描述如 下： 需求a.页面上有一个输入框 “start point”，用户可以输入马的起始位置。起始位置是用逗号隔开的 2 个整数。例如用户输入 4,4，下面右图的起始位置 1 就 是坐标(4,4) 需求b. 实现">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-23T09:52:10.000Z">
+<meta property="article:modified_time" content="2024-10-23T11:54:49.538Z">
+<meta property="article:author" content="王潇">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WX'sMajula" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header" style="color: black;">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo" style="color: black;">
+                <i class="logo"></i>
+                <span class="site-title" style="color: black;">WX&#39;sMajula</span>
+            </a>
+            <nav id="main-nav" style="color: black;">
+                
+                    <a class="main-nav-link" href="/" style="color: black;">首页</a>
+                
+                    <a class="main-nav-link" href="/archives" style="color: black;">归档</a>
+                
+                    <a class="main-nav-link" href="/about" style="color: black;">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner" style="color: black;">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/" style="color: black;">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives" style="color: black;">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/about" style="color: black;">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>分类</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            HackerRank三个月挑战
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第一周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/%E6%95%B0%E7%BB%84/">Divisible Sum Pairs 可除和对</a></li>  <li class="file"><a href="/2024/10/07/Sparse-Arrays/">Sparse Arrays 稀疏阵列</a></li>  <li class="file"><a href="/2024/10/07/Mini-Max-Sum/">Mini-Max Sum</a></li>  <li class="file"><a href="/2024/10/07/Time-Conversion/">Time Conversion</a></li>  <li class="file"><a href="/2024/10/07/Breaking-the-Records/">Breaking the Records</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第三周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/18/Permuting-Two-Arrays%E6%9F%90%E7%A7%8D%E6%8E%92%E5%88%97/">Permuting Two Arrays某种排列</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第二周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/Lonely-Integer/">Lonely Integer</a></li>  <li class="file"><a href="/2024/10/07/Grading-Students/">Grading Students</a></li>  <li class="file"><a href="/2024/10/07/Flipping-bits/">Flipping bits</a></li>  <li class="file"><a href="/2024/10/07/Diagonal-Difference/">Diagonal Difference对角线差</a></li>  <li class="file"><a href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a></li>  <li class="file"><a href="/2024/10/21/%E5%85%A8%E5%AD%97%E6%AF%8D%E7%9F%AD%E5%8F%A5/">全字母短句</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2024/10/07/%E5%89%8D%E8%A8%80/">前言</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            TS类型体操
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            简单题
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/11/FirstofArray/">FirstofArray</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            前端
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Js有的没的
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  <li class="file"><a href="/2024/10/11/Object-key-value%E5%92%8Centries/">Object.key,value和entries</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            React
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/02/React%E7%BB%84%E4%BB%B6%E7%9A%84TS%E7%B1%BB%E5%9E%8B/">React组件的TS类型</a></li>  <li class="file"><a href="/2024/09/16/%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6%E4%B8%8E%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6/">受控组件与非受控组件</a></li>  <li class="file"><a href="/2024/09/23/%E8%99%9A%E6%8B%9Fdom/">虚拟dom</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            ThreeJs
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            事前准备
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/09/ThreeJs/">ThreeJs一些概念</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            css
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/09/%E8%87%AA%E7%95%99%E6%8C%89%E9%92%AE%E5%8A%A8%E7%94%BB/">自留按钮动画</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            vscode
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/17/%E8%AE%B0%E4%B8%80%E4%B8%8Bvs%E6%8F%92%E4%BB%B6/">记一下vs插件</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            面试
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/27/%E8%BF%AA%E7%81%AB%E4%B8%80%E9%9D%A2/">迪火一面</a></li>  <li class="file"><a href="/2024/10/10/%E7%A5%9E%E7%A7%98%E5%B0%8F%E5%8E%82/">神秘小厂</a></li>  <li class="file"><a href="/2024/10/14/%E7%90%86%E7%81%B5%E6%96%87%E5%8C%96/">理灵文化</a></li>  <li class="file active"><a href="/2024/10/23/%E8%84%91%E8%99%8E%E7%A7%91%E6%8A%80%E4%B9%8B%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/">脑虎科技之马踏棋盘</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            面试题
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/13/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            后端
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            nest
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/18/nest%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/">nest导入模块</a></li>  <li class="file"><a href="/2024/10/20/%E8%8A%B1%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/">花式数据请求</a></li>  <li class="file"><a href="/2024/10/20/%E4%B8%80%E4%BA%9B%E7%94%A8%E5%BE%97%E5%88%B0%E7%9A%84nest%E6%8F%92%E4%BB%B6/">一些用得到的nest插件</a></li>  <li class="file"><a href="/2024/10/20/%E7%90%86%E8%A7%A3%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">理解依赖注入</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            日常
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            流水账
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2024年
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  <li class="file"><a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">10-16折腾一下自动化部署</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            游戏王
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E9%81%97%E5%BC%8F%E6%97%B6%E9%97%B4%E7%BA%BF/">遗式时间线</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2024/08/28/%E5%88%9D%E8%A1%B7/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            算法
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            二叉树
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/">二叉树前置思想</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            动态规划
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/04/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">天才的第一步</a></li>  <li class="file"><a href="/2024/09/27/%E5%8F%8D%E6%80%9D%E4%B8%89%E9%81%93%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%A2%98/">反思三道动态规划题</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            双指针
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/">快慢指针</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            栈与队列
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/31/8-31/">括号问题</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            链表
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%98%8E%E4%BA%86%E9%93%BE%E8%A1%A8/">领悟链表节点</a></li>  <li class="file"><a href="/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/">指定增删改链表思路</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            项目
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            组件库
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            事前准备
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/02/rollup%E5%9F%BA%E6%9C%AC%E6%9E%84%E5%BB%BA/">rollup基本构建</a></li>  <li class="file"><a href="/2024/10/02/%E5%BC%95%E5%85%A5tailwind-className/">引入tailwind,className</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2024/10/02/%E5%86%99%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%8C%E4%BB%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E5%BC%80%E5%A7%8B%E7%BC%96/">写组件库，从第一个按钮开始编</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            表情包制作
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/30/9-30/">在nest中使用Imagekit.io</a></li>  <li class="file"><a href="/2024/10/01/%E5%AE%8C%E6%88%90imagekit%E8%AE%A4%E8%AF%81%E5%89%8D%E7%BD%AE/">完成imagekit认证前置</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-脑虎科技之马踏棋盘" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/">面试</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2024/10/23/%E8%84%91%E8%99%8E%E7%A7%91%E6%8A%80%E4%B9%8B%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/">
+            <time datetime="2024-10-23T09:52:10.000Z" itemprop="datePublished">2024-10-23</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            脑虎科技之马踏棋盘
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p>这是一个著名的问题。在 8×8 的国际象棋棋盘上用一个马按照马步跳遍整个棋盘，要求每个格子都只跳到一次，最后回到出发点。</p>
+<h5 id="第一问">第一问</h5>
+<p>你的任务是实现一个网页来展示马踏棋盘的整个交互过程。需求描述如 下：</p>
+<p><strong>需求a</strong>.页面上有一个输入框 “start point”，用户可以输入马的起始位置。起始位置是用逗号隔开的 2 个整数。例如用户输入 4,4，下面右图的起始位置 1 就 是坐标(4,4)</p>
+<p><strong>需求b.</strong> 实现一个拖动条，用户拖动这个拖动条，可以看到马当前移动的路径。 例如用户拖动到 40，那么下面的图就要展示出从第 1 到第 40 步移动的路径。</p>
+<p><strong>需求c.</strong> 实现两个个按钮，“line”用于显示马移动的路径，“numbers”用于 显示移动的步数。我这里图片显示是 2 个棋盘，你实际实现的时候，用户只应该 看到一个棋盘，用户点击 line 和 numbers 按钮的时候，棋盘显示效果会发生切换。</p>
+
+<h5 id="第二问">第二问</h5>
+<p>马踏棋盘并不是只是在国际象棋棋盘上才成立，其他尺寸的棋盘也一样 具有这样的结论。传统的马踏棋盘需要马最终回到起点，第二和第三问这里可以 稍微弱化我们的要求，只要求走完整个棋盘的格子，不要求回到起点。 需求 d：在保留前面功能的前提下，增加一个输入框，名称叫“board size”， 用于输入棋盘的大小。起始位置是用逗号隔开的 2 个整数。例如输入 (3,10)，得 到的结果是这样的</p>
+
+<p>例如输入 (25,25)，得到的结果是这样的</p>
+
+<h5 id="第三问">第三问</h5>
+<p>马踏棋盘并不是只是在矩形的棋盘上才成立，其他不规则图形也有可能 具有这样的结论。 需求 e：在保留需求 a，b，c 的前提下，增加一个用户自定义棋盘按钮“user defined board”，用户点击此按钮之后可以从自己的电脑上传一个自己定义的 棋盘文件，这个文件是用 json 或者 yaml 描述的。然后得到不规则图形的马踏 棋盘交互效果，如下图所示。你的代码注释里要讲清楚如何描述不规则棋盘</p>
+
+<p>okok,一个个来</p>
+<h5 id="第一问-v2">第一问</h5>
+<p>先实现一下8x8的棋盘再说</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./App.scss&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">renderSquare</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> squares = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">const</span> squareClass = (i + j) % <span class="number">2</span> === <span class="number">0</span> ? <span class="string">&quot;square&quot;</span> : <span class="string">&quot;square-black&quot;</span>;</span><br><span class="line">      squares.<span class="title function_">push</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">key</span>=<span class="string">&#123;</span>`$&#123;<span class="attr">i</span>&#125;<span class="attr">-</span>$&#123;<span class="attr">j</span>&#125;`&#125; <span class="attr">className</span>=<span class="string">&#123;squareClass&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> squares;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">      <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;container&quot;</span>&gt;</span>&#123;renderSquare()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">50%</span>, <span class="number">20%</span>);</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">8</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">8</span>, <span class="number">1</span>fr);</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.square</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line"></span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#b8b4b4</span>;</span><br><span class="line">      <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;-black &#123;</span><br><span class="line">      <span class="attribute">background-color</span>: black;</span><br><span class="line"></span><br><span class="line">      &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">        <span class="attribute">cursor</span>: pointer;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后加上文本框和马</p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./App.scss&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Icon</span> <span class="keyword">from</span> <span class="string">&quot;./assets/horse.svg&quot;</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">renderSquare</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> squares = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">const</span> squareClass = (i + j) % <span class="number">2</span> === <span class="number">0</span> ? <span class="string">&quot;square&quot;</span> : <span class="string">&quot;square-black&quot;</span>;</span><br><span class="line">      squares.<span class="title function_">push</span>(<span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;</span>`$&#123;<span class="attr">i</span>&#125;<span class="attr">-</span>$&#123;<span class="attr">j</span>&#125;`&#125; <span class="attr">className</span>=<span class="string">&#123;squareClass&#125;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> squares;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;container&quot;</span>&gt;</span>&#123;renderSquare()&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;Icon&#125;</span> <span class="attr">alt</span>=<span class="string">&quot;horse&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;searchbox&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">button</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.container</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">50%</span>, <span class="number">20%</span>);</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  <span class="attribute">grid-template-columns</span>: <span class="built_in">repeat</span>(<span class="number">8</span>, <span class="number">1</span>fr);</span><br><span class="line">  <span class="attribute">grid-template-rows</span>: <span class="built_in">repeat</span>(<span class="number">8</span>, <span class="number">1</span>fr);</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.square</span> &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: white;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">    &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#b8b4b4</span>;</span><br><span class="line">      <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    &#125;</span><br><span class="line">    &amp;-black &#123;</span><br><span class="line">      <span class="attribute">background-color</span>: black;</span><br><span class="line">      &amp;<span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#333</span>;</span><br><span class="line">        <span class="attribute">cursor</span>: pointer;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.searchbox</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">70%</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">28%</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="selector-tag">input</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">button</span> &#123;</span><br><span class="line">    <span class="attribute">vertical-align</span>: top;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">26px</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么下一个问题:获取文本框的输入并区分逗号?</p>
+<p><code>const values = inputValue.split(&quot;,&quot;).map(Number);</code></p>
+<figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">&quot;./App.scss&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="title class_">Icon</span> <span class="keyword">from</span> <span class="string">&quot;./assets/horse.svg&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">ChangeEvent</span>, useState &#125; <span class="keyword">from</span> <span class="string">&quot;react&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 渲染8x8的棋盘</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">renderSquare</span>(<span class="params"><span class="attr">startPosition</span>: [<span class="built_in">number</span>, <span class="built_in">number</span>] | <span class="literal">null</span></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> squares = [];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">8</span>; j++) &#123;</span><br><span class="line">      <span class="keyword">const</span> squareClass = (i + j) % <span class="number">2</span> === <span class="number">0</span> ? <span class="string">&quot;square&quot;</span> : <span class="string">&quot;square-black&quot;</span>;</span><br><span class="line">      squares.<span class="title function_">push</span>(</span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">key</span>=<span class="string">&#123;</span>`$&#123;<span class="attr">i</span>&#125;<span class="attr">-</span>$&#123;<span class="attr">j</span>&#125;`&#125; <span class="attr">className</span>=<span class="string">&#123;squareClass&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          &#123;startPosition &amp;&amp; startPosition[0] === i &amp;&amp; startPosition[1] === j &amp;&amp; (</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&#123;Icon&#125;</span> <span class="attr">alt</span>=<span class="string">&quot;horse&quot;</span> <span class="attr">style</span>=<span class="string">&#123;&#123;position:</span>&quot;<span class="attr">absolute</span>&quot;&#125;&#125; /&gt;</span></span></span><br><span class="line"><span class="language-xml">          )&#125;</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">      );</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> squares;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="keyword">const</span> [inputValue, setInputValue] = <span class="title function_">useState</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="keyword">const</span> [startPosition, setStartPosition] = useState&lt;[<span class="built_in">number</span>, <span class="built_in">number</span>] | <span class="literal">null</span>&gt;(<span class="literal">null</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleClick</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> values = inputValue.<span class="title function_">split</span>(<span class="string">&#x27;,&#x27;</span>).<span class="title function_">map</span>(<span class="title class_">Number</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (values.<span class="property">length</span> === <span class="number">2</span> &amp;&amp; values.<span class="title function_">every</span>(<span class="function"><span class="params">n</span> =&gt;</span> !<span class="built_in">isNaN</span>(n) &amp;&amp; n &gt;= <span class="number">0</span> &amp;&amp; n &lt; <span class="number">8</span>)) &#123;</span><br><span class="line">      <span class="title function_">setStartPosition</span>([values[<span class="number">0</span>], values[<span class="number">1</span>]]);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">&quot;请输入有效的起始位置,格式为:x,y,且 x 和 y 在 0 到 7 之间.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> <span class="title function_">handleChange</span> = (<span class="params"><span class="attr">event</span>: <span class="title class_">ChangeEvent</span>&lt;<span class="title class_">HTMLInputElement</span>&gt;</span>) =&gt; &#123;</span><br><span class="line">    <span class="title function_">setInputValue</span>(event.<span class="property">target</span>.<span class="property">value</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;container&quot;</span>&gt;</span>&#123;renderSquare(startPosition)&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&quot;searchbox&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&#123;inputValue&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;handleChange&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          确定</span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="title class_">App</span>;</span><br></pre></td></tr></table></figure>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+    
+        <a href="/2024/10/21/%E5%85%A8%E5%AD%97%E6%AF%8D%E7%9F%AD%E5%8F%A5/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">全字母短句</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <!-- <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            王潇 &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer> -->
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

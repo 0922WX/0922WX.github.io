@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-10-23T11:54:49.538Z</updated>
+  <updated>2024-10-25T02:02:48.088Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>谐云科技</title>
+    <link href="https://0922wx.github.io/2024/10/25/%E8%B0%90%E4%BA%91%E7%A7%91%E6%8A%80/"/>
+    <id>https://0922wx.github.io/2024/10/25/%E8%B0%90%E4%BA%91%E7%A7%91%E6%8A%80/</id>
+    <published>2024-10-25T01:56:27.000Z</published>
+    <updated>2024-10-25T02:02:48.088Z</updated>
+    
+    <content type="html"><![CDATA[<p>不像是要招人的样子捏</p><ol><li>HTTP1.0和2.0</li><li>项目是练手的还是投入使用了</li><li>react双向绑定</li><li>react数据缓存？（不知道什么东西）</li><li>JS和TS有什么区别</li><li>讲一下事件循环</li><li>怎么看待互联网行业</li><li>怎么看加班</li></ol><p>反问：</p><ol><li>实习生会先培训再投入研发</li><li>主要是react</li></ol><p><code>昨夜想了很久，哪个路口哪有~</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;不像是要招人的样子捏&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;HTTP1.0和2.0&lt;/li&gt;
+&lt;li&gt;项目是练手的还是投入使用了&lt;/li&gt;
+&lt;li&gt;react双向绑定&lt;/li&gt;
+&lt;li&gt;react数据缓存？（不知道什么东西）&lt;/li&gt;
+&lt;li&gt;JS和TS有什么区别&lt;/li&gt;
+&lt;li&gt;讲</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="面试" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>脑虎科技之马踏棋盘</title>
@@ -529,35 +560,6 @@
     
     
     <category term="HackerRank三个月挑战" scheme="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>10-7</title>
-    <link href="https://0922wx.github.io/2024/10/07/10-7/"/>
-    <id>https://0922wx.github.io/2024/10/07/10-7/</id>
-    <published>2024-10-07T14:20:19.000Z</published>
-    <updated>2024-10-07T14:23:25.077Z</updated>
-    
-    <content type="html"><![CDATA[<p>234234</p><p>这个<strong>简爱 鲜奶米布丁</strong></p><p>豪赤!🤓👍</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;234234&lt;/p&gt;
-&lt;p&gt;这个&lt;strong&gt;简爱 鲜奶米布丁&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;豪赤!🤓👍&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    <category term="流水账" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
-    
-    <category term="2024年" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/2024%E5%B9%B4/"/>
     
     
   </entry>

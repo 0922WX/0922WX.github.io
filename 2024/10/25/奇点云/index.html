@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>奇点云 | WX&#39;sMajula</title>
+    
+    
+        <meta name="keywords" content="奇点云" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="汗流浃背(褒义)  之前实习过吗(没有,感觉已经寄80%了) 介绍一下常用布局 选择器优先级 介绍一下定位 absolute 设置top:10px会发生什么 JS的异步方法 await后面都能跟些什么 TS的特点 TS的数据类型 TS怎么类型声明 TS的interface和type的区别 TS的工具类 div包裹div，外层div的内联样式会影响到内部吗 写过自定义Hook吗 less和sass的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="奇点云">
+<meta property="og:url" content="https://0922wx.github.io/2024/10/25/%E5%A5%87%E7%82%B9%E4%BA%91/index.html">
+<meta property="og:site_name" content="WX&#39;sMajula">
+<meta property="og:description" content="汗流浃背(褒义)  之前实习过吗(没有,感觉已经寄80%了) 介绍一下常用布局 选择器优先级 介绍一下定位 absolute 设置top:10px会发生什么 JS的异步方法 await后面都能跟些什么 TS的特点 TS的数据类型 TS怎么类型声明 TS的interface和type的区别 TS的工具类 div包裹div，外层div的内联样式会影响到内部吗 写过自定义Hook吗 less和sass的">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-10-25T07:45:17.000Z">
+<meta property="article:modified_time" content="2024-10-29T07:52:23.330Z">
+<meta property="article:author" content="王潇">
+<meta name="twitter:card" content="summary">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico" />
+    
+
+    
+<link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+
+    
+<link rel="stylesheet" href="/libs/open-sans/styles.css">
+
+    
+<link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    
+<script src="/libs/jquery/plugins/cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+
+    
+    
+        
+<link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+
+    
+    
+    
+    
+
+
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="WX'sMajula" type="application/atom+xml">
+</head>
+
+<body>
+    <div id="container">
+        <header id="header" style="color: black;">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo" style="color: black;">
+                <i class="logo"></i>
+                <span class="site-title" style="color: black;">WX&#39;sMajula</span>
+            </a>
+            <nav id="main-nav" style="color: black;">
+                
+                    <a class="main-nav-link" href="/" style="color: black;">首页</a>
+                
+                    <a class="main-nav-link" href="/archives" style="color: black;">归档</a>
+                
+                    <a class="main-nav-link" href="/about" style="color: black;">关于</a>
+                
+            </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner" style="color: black;">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/" style="color: black;">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives" style="color: black;">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/about" style="color: black;">关于</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap" id='categories'>
+        <h3 class="widget-title">
+            <span>分类</span>
+            &nbsp;
+            <a id='allExpand' href="#">
+                <i class="fa fa-angle-double-down fa-2x"></i>
+            </a>
+        </h3>
+        
+        
+        
+         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            HackerRank三个月挑战
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第一周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/%E6%95%B0%E7%BB%84/">Divisible Sum Pairs 可除和对</a></li>  <li class="file"><a href="/2024/10/07/Sparse-Arrays/">Sparse Arrays 稀疏阵列</a></li>  <li class="file"><a href="/2024/10/07/Mini-Max-Sum/">Mini-Max Sum</a></li>  <li class="file"><a href="/2024/10/07/Time-Conversion/">Time Conversion</a></li>  <li class="file"><a href="/2024/10/07/Breaking-the-Records/">Breaking the Records</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第三周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/18/Permuting-Two-Arrays%E6%9F%90%E7%A7%8D%E6%8E%92%E5%88%97/">Permuting Two Arrays某种排列</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            第二周
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/07/Lonely-Integer/">Lonely Integer</a></li>  <li class="file"><a href="/2024/10/07/Grading-Students/">Grading Students</a></li>  <li class="file"><a href="/2024/10/07/Flipping-bits/">Flipping bits</a></li>  <li class="file"><a href="/2024/10/07/Diagonal-Difference/">Diagonal Difference对角线差</a></li>  <li class="file"><a href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a></li>  <li class="file"><a href="/2024/10/21/%E5%85%A8%E5%AD%97%E6%AF%8D%E7%9F%AD%E5%8F%A5/">全字母短句</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2024/10/07/%E5%89%8D%E8%A8%80/">前言</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            TS类型体操
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            简单题
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/11/FirstofArray/">FirstofArray</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            前端
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Js有的没的
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  <li class="file"><a href="/2024/10/11/Object-key-value%E5%92%8Centries/">Object.key,value和entries</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            React
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/02/React%E7%BB%84%E4%BB%B6%E7%9A%84TS%E7%B1%BB%E5%9E%8B/">React组件的TS类型</a></li>  <li class="file"><a href="/2024/09/16/%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6%E4%B8%8E%E9%9D%9E%E5%8F%97%E6%8E%A7%E7%BB%84%E4%BB%B6/">受控组件与非受控组件</a></li>  <li class="file"><a href="/2024/09/23/%E8%99%9A%E6%8B%9Fdom/">虚拟dom</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            ThreeJs
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            事前准备
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/09/ThreeJs/">ThreeJs一些概念</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            Typescript
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/31/TS%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%9E%8B/">TS工具类型</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            css
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/09/%E8%87%AA%E7%95%99%E6%8C%89%E9%92%AE%E5%8A%A8%E7%94%BB/">自留按钮动画</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            vscode
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/17/%E8%AE%B0%E4%B8%80%E4%B8%8Bvs%E6%8F%92%E4%BB%B6/">记一下vs插件</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory open">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder-open"></i>
+                            &nbsp;
+                            面试
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/27/%E8%BF%AA%E7%81%AB%E4%B8%80%E9%9D%A2/">迪火一面</a></li>  <li class="file"><a href="/2024/10/10/%E7%A5%9E%E7%A7%98%E5%B0%8F%E5%8E%82/">神秘小厂</a></li>  <li class="file"><a href="/2024/10/14/%E7%90%86%E7%81%B5%E6%96%87%E5%8C%96/">理灵文化</a></li>  <li class="file"><a href="/2024/10/23/%E8%84%91%E8%99%8E%E7%A7%91%E6%8A%80%E4%B9%8B%E9%A9%AC%E8%B8%8F%E6%A3%8B%E7%9B%98/">脑虎科技之马踏棋盘</a></li>  <li class="file"><a href="/2024/10/25/%E8%B0%90%E4%BA%91%E7%A7%91%E6%8A%80/">谐云科技</a></li>  <li class="file active"><a href="/2024/10/25/%E5%A5%87%E7%82%B9%E4%BA%91/">奇点云</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            面试题
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/13/%E9%9D%A2%E8%AF%95%E9%A2%98/">面试题</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            后端
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            nest
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/18/nest%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97/">nest导入模块</a></li>  <li class="file"><a href="/2024/10/20/%E8%8A%B1%E5%BC%8F%E6%95%B0%E6%8D%AE%E8%AF%B7%E6%B1%82/">花式数据请求</a></li>  <li class="file"><a href="/2024/10/20/%E4%B8%80%E4%BA%9B%E7%94%A8%E5%BE%97%E5%88%B0%E7%9A%84nest%E6%8F%92%E4%BB%B6/">一些用得到的nest插件</a></li>  <li class="file"><a href="/2024/10/20/%E7%90%86%E8%A7%A3%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">理解依赖注入</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            日常
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            流水账
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            2024年
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  <li class="file"><a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">10-16折腾一下自动化部署</a></li>  <li class="file"><a href="/2024/10/25/10-25/">10-25两种状态</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            游戏王
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E9%81%97%E5%BC%8F%E6%97%B6%E9%97%B4%E7%BA%BF/">遗式时间线</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2024/08/28/%E5%88%9D%E8%A1%B7/"></a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            算法
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            二叉树
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/02/%E4%BA%8C%E5%8F%89%E6%A0%91%E6%80%9D%E8%B7%AF/">二叉树前置思想</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            动态规划
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/04/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">天才的第一步</a></li>  <li class="file"><a href="/2024/09/27/%E5%8F%8D%E6%80%9D%E4%B8%89%E9%81%93%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E9%A2%98/">反思三道动态规划题</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            双指针
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/%E5%8F%8C%E6%8C%87%E9%92%88/">快慢指针</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            栈与队列
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/31/8-31/">括号问题</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            链表
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/30/%E4%B8%80%E5%BC%A0%E5%9B%BE%E6%98%8E%E4%BA%86%E9%93%BE%E8%A1%A8/">领悟链表节点</a></li>  <li class="file"><a href="/2024/10/06/%E6%8C%87%E5%AE%9A%E5%A2%9E%E5%88%A0%E6%94%B9%E9%93%BE%E8%A1%A8%E6%80%9D%E8%B7%AF/">指定增删改链表思路</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            项目
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            组件库
+                        </a>
+                         <ul class="unstyled" id="tree" > 
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            事前准备
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/02/rollup%E5%9F%BA%E6%9C%AC%E6%9E%84%E5%BB%BA/">rollup基本构建</a></li>  <li class="file"><a href="/2024/10/02/%E5%BC%95%E5%85%A5tailwind-className/">引入tailwind,className</a></li>  </ul> 
+                    </li> 
+                     <li class="file"><a href="/2024/10/02/%E5%86%99%E7%BB%84%E4%BB%B6%E5%BA%93%EF%BC%8C%E4%BB%8E%E7%AC%AC%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE%E5%BC%80%E5%A7%8B%E7%BC%96/">写组件库，从第一个按钮开始编</a></li>  </ul> 
+                    </li> 
+                    
+                    <li class="directory">
+                        <a href="#" data-role="directory">
+                            <i class="fa fa-folder"></i>
+                            &nbsp;
+                            表情包制作
+                        </a>
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/09/30/9-30/">在nest中使用Imagekit.io</a></li>  <li class="file"><a href="/2024/10/01/%E5%AE%8C%E6%88%90imagekit%E8%AE%A4%E8%AF%81%E5%89%8D%E7%BD%AE/">完成imagekit认证前置</a></li>  </ul> 
+                    </li> 
+                     </ul> 
+                    </li> 
+                     </ul> 
+    </div>
+    <script>
+        $(document).ready(function() {
+            var iconFolderOpenClass  = 'fa-folder-open';
+            var iconFolderCloseClass = 'fa-folder';
+            var iconAllExpandClass = 'fa-angle-double-down';
+            var iconAllPackClass = 'fa-angle-double-up';
+            // Handle directory-tree expansion:
+            // 左键单独展开目录
+            $(document).on('click', '#categories a[data-role="directory"]', function (event) {
+                event.preventDefault();
+
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var subtree = $(this).siblings('ul');
+                icon.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if (expanded) {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideUp({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderCloseClass);
+                } else {
+                    if (typeof subtree != 'undefined') {
+                        subtree.slideDown({ duration: 100 });
+                    }
+                    icon.addClass(iconFolderOpenClass);
+                }
+            });
+            // 右键展开下属所有目录
+            $('#categories a[data-role="directory"]').bind("contextmenu", function(event){
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconFolderOpenClass);
+                var listNode = $(this).siblings('ul');
+                var subtrees = $.merge(listNode.find('li ul'), listNode);
+                var icons = $.merge(listNode.find('.fa'), icon);
+                icons.removeClass(iconFolderOpenClass).removeClass(iconFolderCloseClass);
+                if(expanded) {
+                    subtrees.slideUp({ duration: 100 });
+                    icons.addClass(iconFolderCloseClass);
+                } else {
+                    subtrees.slideDown({ duration: 100 });
+                    icons.addClass(iconFolderOpenClass);
+                }
+            })
+            // 展开关闭所有目录按钮
+            $(document).on('click', '#allExpand', function (event) {
+                event.preventDefault();
+                
+                var icon = $(this).children('.fa');
+                var expanded = icon.hasClass(iconAllExpandClass);
+                icon.removeClass(iconAllExpandClass).removeClass(iconAllPackClass);
+                if(expanded) {
+                    $('#sidebar .fa.fa-folder').removeClass('fa-folder').addClass('fa-folder-open')
+                    $('#categories li ul').slideDown({ duration: 100 });
+                    icon.addClass(iconAllPackClass);
+                } else {
+                    $('#sidebar .fa.fa-folder-open').removeClass('fa-folder-open').addClass('fa-folder')
+                    $('#categories li ul').slideUp({ duration: 100 });
+                    icon.addClass(iconAllExpandClass);
+                }
+            });  
+        });
+    </script>
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+            <section id="main"><article id="post-奇点云" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/">面试</a>
+    </div>
+
+                        
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2024/10/25/%E5%A5%87%E7%82%B9%E4%BA%91/">
+            <time datetime="2024-10-25T07:45:17.000Z" itemprop="datePublished">2024-10-25</time>
+        </a>
+    </div>
+
+
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
+                
+    
+        <h1 class="article-title" itemprop="name">
+            奇点云
+        </h1>
+    
+
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p>汗流浃背(褒义)</p>
+<ol>
+<li>之前实习过吗(没有,感觉已经寄80%了)</li>
+<li>介绍一下常用布局</li>
+<li>选择器优先级</li>
+<li>介绍一下定位</li>
+<li>absolute 设置top:10px会发生什么</li>
+<li>JS的异步方法</li>
+<li>await后面都能跟些什么</li>
+<li>TS的特点</li>
+<li>TS的数据类型</li>
+<li>TS怎么类型声明</li>
+<li>TS的interface和type的区别</li>
+<li>TS的工具类</li>
+<li>div包裹div，外层div的内联样式会影响到内部吗</li>
+<li>写过自定义Hook吗</li>
+<li>less和sass的优点</li>
+<li>==和===的区别</li>
+<li>[]==[]会发生什么(false)</li>
+<li>react常用的HOOKS</li>
+<li>Hooks的执行顺序 (完全不知道捏)</li>
+<li>第一个useeffect的依赖项[a],第二个useeffect依赖项[a,b]，a变化时会一起触发渲染吗</li>
+<li>sql语句(不会)</li>
+<li>linux常用命令</li>
+</ol>
+<h4 id="213">213</h4>
+<ol>
+<li>
+<ul>
+<li>首先，React 会执行组件的函数体，开始渲染过程。在这个阶段，使用 <code>useMemo</code> 和 <code>useCallback</code> 的代码会被执行。</li>
+<li><strong><code>useMemo</code></strong> 会根据依赖项的变化来计算并返回缓存的值。如果依赖项没有变化，则返回之前缓存的值。</li>
+<li><strong><code>useCallback</code></strong> 会根据依赖项的变化返回一个缓存的函数引用。如果依赖项没有变化，则返回之前的函数引用。</li>
+</ul>
+</li>
+<li><strong>DOM 更新</strong>：
+<ul>
+<li>在渲染过程结束后，React 会进行 DOM 更新，将计算得到的值和组件的渲染结果应用到 DOM 中。</li>
+</ul>
+</li>
+<li><strong>副作用处理</strong>：
+<ul>
+<li>在所有的渲染和 DOM 更新完成后，React 才会执行 <code>useEffect</code> 中定义的副作用函数。如果组件在这一过程中被卸载，相关的清理函数（如果定义了）也会被调用。</li>
+</ul>
+</li>
+</ol>
+<h3 id="执行顺序总结">执行顺序总结</h3>
+<ol>
+<li><strong>首先执行 <code>useMemo</code></strong> 和 <code>useCallback</code>：在组件渲染函数中计算值和函数引用。</li>
+<li><strong>随后进行 DOM 更新</strong>：将渲染结果应用到 DOM。</li>
+<li><strong>最后执行 <code>useEffect</code> 中的副作用函数</strong>：处理副作用，与数据获取、订阅等相关。</li>
+</ol>
+<p>这种执行顺序确保了在调用 effect 时，组件已经完成了渲染，并且可以安全地使用渲染过程中创建的值和函数引用。希望这能帮助你理解这三个钩子的执行顺序！<code>useEffect</code> 在 React 的执行顺序中被设计为在组件渲染后执行，这样的设计有几个重要原因：</p>
+<h3 id="1-渲染结果的可用性">1. <strong>渲染结果的可用性</strong></h3>
+<p><code>useEffect</code> 依赖于组件渲染后的状态和 DOM 节点。如果在渲染过程之前执行 <code>useEffect</code>，那么它可能会尝试访问未更新的状态或未渲染的 DOM 结构，这会导致不可预测的行为和错误。因此，React 选择在渲染完成后再执行 <code>useEffect</code>，以确保所有的渲染结果和状态都是最新的。</p>
+<h3 id="2-性能优化">2. <strong>性能优化</strong></h3>
+<p>在组件渲染期间，React 会进行虚拟 DOM 的计算和对比，以决定如何高效地更新实际 DOM。如果将副作用放在渲染过程中，可能会导致不必要的渲染延迟和性能损失。通过将副作用放在渲染的下一步，React 可以优化这些操作，从而提升性能。</p>
+<h3 id="3-避免副作用影响渲染">3. <strong>避免副作用影响渲染</strong></h3>
+<p>副作用通常涉及异步操作（如数据获取、订阅等），这些操作可能需要时间才能完成。如果在渲染期间执行这些操作，会导致组件的显示延迟或不一致。将副作用放在渲染后，可以确保用户看到的是稳定的 UI，而不会因为运行副作用而造成闪烁或不一致的体验。</p>
+<h3 id="总结">总结</h3>
+<p>通过在渲染完成后才执行 <code>useEffect</code>，React 能够确保：</p>
+<ul>
+<li>访问的是最新的状态和 DOM；</li>
+<li>不影响渲染性能和用户体验；</li>
+<li>副作用可以安全地处理和清理。</li>
+</ul>
+<p>这种设计使得 React 的组件能够更加高效和稳定。</p>
+
+            </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
+    
+<nav id="article-nav">
+    
+        <a href="/2024/10/25/10-25/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    10-25两种状态
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2024/10/25/%E8%B0%90%E4%BA%91%E7%A7%91%E6%8A%80/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">谐云科技</div>
+        </a>
+    
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
+</section>
+        </div>
+        <!-- <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            王潇 &copy; 2024 
+            <a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
+            <br> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme - <a target="_blank" rel="noopener" href="https://github.com/zthxxx/hexo-theme-Wikitten">wikitten</a>
+            
+                <br>
+                <span id="busuanzi_container_site_pv"><i class="fa fa-eye"></i> <span id="busuanzi_value_site_pv"></span></span>
+                &nbsp;|&nbsp;
+                <span id="busuanzi_container_site_pv"><i class="fa fa-user"></i> <span id="busuanzi_value_site_uv"></span></span>
+            
+        </div>
+    </div>
+</footer> -->
+
+        
+
+    
+        
+<script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-share.min.js"></script>
+
+        
+<script src="/libs/lightgallery/js/lg-video.min.js"></script>
+
+    
+    
+        
+<script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+
+    
+    
+        <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true,
+            TeX: {
+                equationNumbers: {
+                  autoNumber: 'AMS'
+                }
+            }
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+
+<script src="/js/main.js"></script>
+
+
+    </div>
+</body>
+</html>

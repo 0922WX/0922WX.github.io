@@ -272,7 +272,7 @@
                             &nbsp;
                             Typescript
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/31/TS%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%9E%8B/">TS工具类型</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/10/31/TS%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%9E%8B/">TS工具类型</a></li>  <li class="file"><a href="/2024/11/12/TS%E9%87%8D%E8%BD%BD/">TS重载</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -351,7 +351,7 @@
                             &nbsp;
                             2024年
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  <li class="file"><a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">10-16折腾一下自动化部署</a></li>  <li class="file"><a href="/2024/10/25/10-25/">10-25两种状态</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/29/8-29/">8-29切合实际与不切实际的幻想时间</a></li>  <li class="file"><a href="/2024/08/30/8-30/">8-30痛定思痛与继续打牌</a></li>  <li class="file"><a href="/2024/09/01/9-1/">9-1高浓度赛博垃圾场</a></li>  <li class="file"><a href="/2024/09/02/9-2/">9-2世界是一个巨大的蓝色链接</a></li>  <li class="file"><a href="/2024/09/05/9-5/">9-5噩耗：后天开学</a></li>  <li class="file"><a href="/2024/09/06/9-6/">9-6连滚带爬的做完了</a></li>  <li class="file"><a href="/2024/09/08/9-8/">9-8有那么一点点拨云见日了</a></li>  <li class="file"><a href="/2024/09/13/9-13/">9-13中秋节再冲一次吧</a></li>  <li class="file"><a href="/2024/09/16/9-16/">9-16又和项目搏斗了一天</a></li>  <li class="file"><a href="/2024/09/21/9-21/">9-21即将到来的第一次面试</a></li>  <li class="file"><a href="/2024/10/07/10-7/">10-7</a></li>  <li class="file"><a href="/2024/10/13/10-13/">10-13</a></li>  <li class="file"><a href="/2024/10/16/10-16%E6%8A%98%E8%85%BE%E4%B8%80%E4%B8%8B%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">10-16折腾一下自动化部署</a></li>  <li class="file"><a href="/2024/10/25/10-25/">10-25两种状态</a></li>  <li class="file"><a href="/2024/11/06/11-6/">11-6</a></li>  </ul> 
                     </li> 
                      </ul> 
                     </li> 
@@ -593,7 +593,23 @@
 <p>那么模块是如何封装这些不同的类，注入依赖呢？</p>
 <p>首先理解一件事在nest中，<strong>Module是最高指挥官</strong>，他将所有提供的程序封装其中（service controller customer class）</p>
 <p>这意味着Module是<strong>决定</strong>某项特定服务是否导出或者被别人使用。因此，在一个特定模块内写入的所有内容都将保留在一个模块内，由你决定是否共享。比如</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">   User Module &lt;|-- 决定</span><br><span class="line">    Post Module &lt;|-- 决定</span><br><span class="line">    class User Module&#123;</span><br><span class="line">        User Controller</span><br><span class="line">        User Service</span><br><span class="line">        Custom Class</span><br><span class="line">    &#125;</span><br><span class="line">    class Post Module&#123;</span><br><span class="line">        Post Controller</span><br><span class="line">        Post Service</span><br><span class="line">        Custom Class</span><br><span class="line">    &#125;</span><br><span class="line">    class 决定&#123;</span><br><span class="line">        导出?</span><br><span class="line">        提供?</span><br><span class="line"> &#125;</span><br><span class="line">    </span><br></pre></td></tr></table></figure>
+<pre class="mermaid">classDiagram
+   User Module <|-- 决定
+    Post Module <|-- 决定
+    class User Module{
+        User Controller
+        User Service
+        Custom Class
+    }
+    class Post Module{
+        Post Controller
+        Post Service
+        Custom Class
+    }
+    class 决定{
+        导出?
+        提供?
+ }</pre>
 <p>你希望<code>User Controller</code>使用<code>User Service</code>你必须让<code>UserModule</code>允许</p>
 <p>在其组件内共享服务或任何其他自定义类被称为 <strong>提供</strong>（provider）</p>
 <p>其实也就是<code>module</code>里的<code>exports</code>和 <code>providers</code>罢了</p>

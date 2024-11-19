@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-11-12T10:54:43.256Z</updated>
+  <updated>2024-11-17T07:12:08.475Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>正在用remix重制博客</title>
+    <link href="https://0922wx.github.io/2024/11/17/%E6%AD%A3%E5%9C%A8%E7%94%A8remix%E9%87%8D%E5%88%B6%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://0922wx.github.io/2024/11/17/%E6%AD%A3%E5%9C%A8%E7%94%A8remix%E9%87%8D%E5%88%B6%E5%8D%9A%E5%AE%A2/</id>
+    <published>2024-11-17T07:12:08.000Z</published>
+    <updated>2024-11-17T07:12:08.475Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>async await本质</title>
+    <link href="https://0922wx.github.io/2024/11/12/async-await%E6%9C%AC%E8%B4%A8/"/>
+    <id>https://0922wx.github.io/2024/11/12/async-await%E6%9C%AC%E8%B4%A8/</id>
+    <published>2024-11-12T12:10:03.000Z</published>
+    <updated>2024-11-12T12:20:51.169Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://segmentfault.com/a/1190000043371796">javascript - 2K字就能理解的async/await原理，还要拖多久？ - 个人文章 - SegmentFault 思否</a></p><h4 id="用generator函数实现async和await">用generator函数实现async和await</h4>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000043371796&quot;&gt;javascript - 2K字就能理解的async/await原理，还要拖多久？ - 个人文章 - SegmentFault 思否&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="Js有的没的" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>TS重载</title>
@@ -511,56 +549,6 @@
     <category term="流水账" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
     
     <category term="2024年" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/2024%E5%B9%B4/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>FirstofArray</title>
-    <link href="https://0922wx.github.io/2024/10/11/FirstofArray/"/>
-    <id>https://0922wx.github.io/2024/10/11/FirstofArray/</id>
-    <published>2024-10-11T14:30:02.000Z</published>
-    <updated>2024-10-11T14:34:40.827Z</updated>
-    
-    <content type="html"><![CDATA[<p>实现一个<code>First&lt;T&gt;</code>泛型，它接受一个数组<code>T</code>并返回它的第一个元素的类型。</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> arr1 = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>]</span><br><span class="line"><span class="keyword">type</span> arr2 = [<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]</span><br><span class="line"><span class="keyword">type</span> head1 = <span class="title class_">First</span>&lt;arr1&gt; <span class="comment">// 应推导出 &#x27;a&#x27;</span></span><br><span class="line"><span class="keyword">type</span> head2 = <span class="title class_">First</span>&lt;arr2&gt; <span class="comment">// 应推导出 3</span></span><br></pre></td></tr></table></figure><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ============= Test Cases =============</span></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">type</span> &#123; <span class="title class_">Equal</span>, <span class="title class_">Expect</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;./test-utils&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> cases = [</span><br><span class="line">  <span class="title class_">Expect</span>&lt;<span class="title class_">Equal</span>&lt;<span class="title class_">First</span>&lt;[<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>]&gt;, <span class="number">3</span>&gt;&gt;,</span><br><span class="line">  <span class="title class_">Expect</span>&lt;<span class="title class_">Equal</span>&lt;<span class="title class_">First</span>&lt;[<span class="function">() =&gt;</span> <span class="number">123</span>, &#123; <span class="attr">a</span>: <span class="built_in">string</span> &#125;]&gt;, <span class="function">() =&gt;</span> <span class="number">123</span>&gt;&gt;,</span><br><span class="line">  <span class="title class_">Expect</span>&lt;<span class="title class_">Equal</span>&lt;<span class="title class_">First</span>&lt;[]&gt;, <span class="built_in">never</span>&gt;&gt;,</span><br><span class="line">  <span class="title class_">Expect</span>&lt;<span class="title class_">Equal</span>&lt;<span class="title class_">First</span>&lt;[<span class="literal">undefined</span>]&gt;, <span class="literal">undefined</span>&gt;&gt;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> errors = [</span><br><span class="line">  <span class="comment">// @ts-expect-error</span></span><br><span class="line">  <span class="title class_">First</span>&lt;<span class="string">&#x27;notArray&#x27;</span>&gt;,</span><br><span class="line">  <span class="comment">// @ts-expect-error</span></span><br><span class="line">  <span class="title class_">First</span>&lt;&#123; <span class="number">0</span>: <span class="string">&#x27;arrayLike&#x27;</span> &#125;&gt;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ============= Your Code Here =============</span></span><br><span class="line"><span class="keyword">type</span> <span class="title class_">First</span>&lt;T <span class="keyword">extends</span> <span class="built_in">any</span>[]&gt; = </span><br></pre></td></tr></table></figure><h5 id="what-can-i-say">what can i say?</h5><p>毫无头绪捏</p><p><code>type First&lt;T extends any[]&gt; = T extends [infer F, ...any[]] ? F : never;</code></p><p>通过条件类型提取数组的第一个元素 <code>F</code>。<code>[infer F, ...any[]]</code> 表示一个数组，<code>F</code> 是第一个元素，<code>...any[]</code> 表示剩余的元素可以是任意类型。</p><p>我怎么感觉好像没看过这种东西</p><p>什么遍历 infer，完全找不到地方看</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;实现一个&lt;code&gt;First&amp;lt;T&amp;gt;&lt;/code&gt;泛型，它接受一个数组&lt;code&gt;T&lt;/code&gt;并返回它的第一个元素的类型。&lt;/p&gt;
-&lt;figure class=&quot;highlight typescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt</summary>
-      
-    
-    
-    
-    <category term="TS类型体操" scheme="https://0922wx.github.io/categories/TS%E7%B1%BB%E5%9E%8B%E4%BD%93%E6%93%8D/"/>
-    
-    <category term="简单题" scheme="https://0922wx.github.io/categories/TS%E7%B1%BB%E5%9E%8B%E4%BD%93%E6%93%8D/%E7%AE%80%E5%8D%95%E9%A2%98/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Object.key,value和entries</title>
-    <link href="https://0922wx.github.io/2024/10/11/Object-key-value%E5%92%8Centries/"/>
-    <id>https://0922wx.github.io/2024/10/11/Object-key-value%E5%92%8Centries/</id>
-    <published>2024-10-11T12:57:37.000Z</published>
-    <updated>2024-10-11T13:08:28.530Z</updated>
-    
-    <content type="html"><![CDATA[<p>key和value，键值对罢了</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;tom&quot;</span>,<span class="attr">age</span>:<span class="number">11</span>&#125;); <span class="comment">// [&quot;name&quot;,&quot;age&quot;]</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">values</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;tom&quot;</span>,<span class="attr">age</span>:<span class="number">11</span>&#125;) <span class="comment">// [&#x27;tom&#x27;,11]</span></span><br></pre></td></tr></table></figure><p>主要是记录一下entries()</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>(&#123;<span class="attr">name</span>:<span class="string">&quot;tom&quot;</span>,<span class="attr">age</span>:<span class="number">11</span>&#125;)<span class="comment">//[Array(2),Arrar(2)]</span></span><br></pre></td></tr></table></figure><p>我去，二维数组</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])<span class="comment">//[Array(2),Arrar(2),Arrar(2)]</span></span><br></pre></td></tr></table></figure><p>手工返回键值对组成的数组，第一个元素是属性的键（始终是字符串），第二个元素是属性值。</p><p>那么绝配map了</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123; <span class="attr">foo</span>: <span class="string">&quot;bar&quot;</span>, <span class="attr">baz</span>: <span class="number">42</span> &#125;;</span><br><span class="line"><span class="keyword">const</span> map = <span class="keyword">new</span> <span class="title class_">Map</span>(<span class="title class_">Object</span>.<span class="title function_">entries</span>(obj));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(map); <span class="comment">// 输出: Map(2) &#123;&quot;foo&quot; =&gt; &quot;bar&quot;, &quot;baz&quot; =&gt; 42&#125;</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;key和value，键值对罢了&lt;/p&gt;
-&lt;figure class=&quot;highlight typescript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;l</summary>
-      
-    
-    
-    
-    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="Js有的没的" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/"/>
     
     
   </entry>

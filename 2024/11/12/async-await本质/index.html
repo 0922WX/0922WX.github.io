@@ -3,17 +3,21 @@
 <head>
     <meta charset="utf-8">
     
-    <title>分类: 第二周 | WX&#39;sMajula</title>
+    <title>async await本质 | WX&#39;sMajula</title>
     
     
-        <meta name="keywords" content="WX&#39;sMajula" />
+        <meta name="keywords" content="async await本质" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="WX&#39;sMajula">
-<meta property="og:url" content="https://0922wx.github.io/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/index.html">
+    <meta name="description" content="javascript - 2K字就能理解的async&#x2F;await原理，还要拖多久？ - 个人文章 - SegmentFault 思否 用generator函数实现async和await">
+<meta property="og:type" content="article">
+<meta property="og:title" content="async await本质">
+<meta property="og:url" content="https://0922wx.github.io/2024/11/12/async-await%E6%9C%AC%E8%B4%A8/index.html">
 <meta property="og:site_name" content="WX&#39;sMajula">
+<meta property="og:description" content="javascript - 2K字就能理解的async&#x2F;await原理，还要拖多久？ - 个人文章 - SegmentFault 思否 用generator函数实现async和await">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-11-12T12:10:03.000Z">
+<meta property="article:modified_time" content="2024-11-12T12:20:51.169Z">
 <meta property="article:author" content="王潇">
 <meta name="twitter:card" content="summary">
     
@@ -219,20 +223,20 @@
                      </ul> 
                     </li> 
                     
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             前端
                         </a>
                          <ul class="unstyled" id="tree" > 
-                    <li class="directory">
+                    <li class="directory open">
                         <a href="#" data-role="directory">
-                            <i class="fa fa-folder"></i>
+                            <i class="fa fa-folder-open"></i>
                             &nbsp;
                             Js有的没的
                         </a>
-                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  <li class="file"><a href="/2024/10/11/Object-key-value%E5%92%8Centries/">Object.key,value和entries</a></li>  <li class="file"><a href="/2024/11/12/async-await%E6%9C%AC%E8%B4%A8/">async await本质</a></li>  </ul> 
+                         <ul class="unstyled" id="tree" >  <li class="file"><a href="/2024/08/28/Deep-and-Shallow-Copy/">浅拷贝与深拷贝</a></li>  <li class="file"><a href="/2024/09/07/%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF/">事件循环</a></li>  <li class="file"><a href="/2024/09/21/BAC/">Bind Apply Call的区别</a></li>  <li class="file"><a href="/2024/10/11/Object-key-value%E5%92%8Centries/">Object.key,value和entries</a></li>  <li class="file active"><a href="/2024/11/12/async-await%E6%9C%AC%E8%B4%A8/">async await本质</a></li>  </ul> 
                     </li> 
                     
                     <li class="directory">
@@ -523,200 +527,97 @@
     <div id="toTop" class="fa fa-angle-up"></div>
 </aside>
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-folder"></i></span>
-        <h1 class="title">第二周</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-async-await本质" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/21/%E5%85%A8%E5%AD%97%E6%AF%8D%E7%9F%AD%E5%8F%A5/">全字母短句</a>
-        </h1>
-    
+                    <div class="article-meta">
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/%E5%89%8D%E7%AB%AF/Js%E6%9C%89%E7%9A%84%E6%B2%A1%E7%9A%84/">Js有的没的</a>
+    </div>
 
-                <div class="article-meta">
-                    
+                        
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2024/10/21/%E5%85%A8%E5%AD%97%E6%AF%8D%E7%9F%AD%E5%8F%A5/">
-            <time datetime="2024-10-21T12:39:22.000Z" itemprop="datePublished">2024-10-21</time>
+        <a href="/2024/11/12/async-await%E6%9C%AC%E8%B4%A8/">
+            <time datetime="2024-11-12T12:10:03.000Z" itemprop="datePublished">2024-11-12</time>
         </a>
     </div>
 
 
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
-    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                        
+                            <i class="fa fa-bar-chart"></i>
+                            <span id="busuanzi_container_site_pv"><span id="busuanzi_value_page_pv"></span></span>    
+                        
+                        
+                    </div>
+                
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">计数排序</a>
+        <h1 class="article-title" itemprop="name">
+            async await本质
         </h1>
     
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2024/10/08/%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F/">
-            <time datetime="2024-10-08T12:01:06.000Z" itemprop="datePublished">2024-10-08</time>
-        </a>
-    </div>
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+        
+            
+        
+        
+            <p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000043371796">javascript - 2K字就能理解的async/await原理，还要拖多久？ - 个人文章 - SegmentFault 思否</a></p>
+<h4 id="用generator函数实现async和await">用generator函数实现async和await</h4>
 
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
-    </div>
-
-                    
-                </div>
             </div>
-        </div>
+        
+        <footer class="article-footer">
+        </footer>
+    </div>
+</article>
+
+
     
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+<nav id="article-nav">
+    
+        <a href="/2024/11/17/%E6%AD%A3%E5%9C%A8%E7%94%A8remix%E9%87%8D%E5%88%B6%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/07/Diagonal-Difference/">Diagonal Difference对角线差</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2024/10/07/Diagonal-Difference/">
-            <time datetime="2024-10-07T12:38:13.000Z" itemprop="datePublished">2024-10-07</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
-    </div>
-
-                    
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    正在用remix重制博客
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/07/Flipping-bits/">Flipping bits</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2024/10/07/Flipping-bits/">
-            <time datetime="2024-10-07T12:35:16.000Z" itemprop="datePublished">2024-10-07</time>
-        </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
-    </div>
-
-                    
-                </div>
             </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/07/Grading-Students/">Grading Students</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2024/10/07/Grading-Students/">
-            <time datetime="2024-10-07T07:16:53.000Z" itemprop="datePublished">2024-10-07</time>
         </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
-    </div>
-
-                    
-                </div>
-            </div>
-        </div>
     
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2024/10/07/Lonely-Integer/">Lonely Integer</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2024/10/07/Lonely-Integer/">
-            <time datetime="2024-10-07T05:56:25.000Z" itemprop="datePublished">2024-10-07</time>
+        <a href="/2024/11/12/TS%E9%87%8D%E8%BD%BD/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">TS重载</div>
         </a>
-    </div>
-
-
-                    
-    <div class="article-category">
-    	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/">HackerRank三个月挑战</a><i class="fa fa-angle-right"></i><a class="article-category-link" href="/categories/HackerRank%E4%B8%89%E4%B8%AA%E6%9C%88%E6%8C%91%E6%88%98/%E7%AC%AC%E4%BA%8C%E5%91%A8/">第二周</a>
-    </div>
-
-                    
-                </div>
-            </div>
-        </div>
     
-</div>
+</nav>
+
+
+
+
+
+    
+    
+
+
+
+
+<!-- baidu url auto push script -->
+<script type="text/javascript">
+    !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=window.location.href,o=document.referrer;if(!e.test(r)){var n="//api.share.baidu.com/s.gif";o?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var t=new Image;t.src=n}}(window);
+</script>     
 </section>
         </div>
         <!-- <footer id="footer">

@@ -6,7 +6,7 @@
   <link href="https://0922wx.github.io/atom.xml" rel="self"/>
   
   <link href="https://0922wx.github.io/"/>
-  <updated>2024-11-17T07:12:08.475Z</updated>
+  <updated>2024-11-27T08:40:55.595Z</updated>
   <id>https://0922wx.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>要到实习了</title>
+    <link href="https://0922wx.github.io/2024/11/27/%E8%A6%81%E5%88%B0%E5%AE%9E%E4%B9%A0%E4%BA%86/"/>
+    <id>https://0922wx.github.io/2024/11/27/%E8%A6%81%E5%88%B0%E5%AE%9E%E4%B9%A0%E4%BA%86/</id>
+    <published>2024-11-27T08:27:16.000Z</published>
+    <updated>2024-11-27T08:40:55.595Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="记录一下面试过的公司">记录一下面试过的公司</h3><ul><li>杭州迪火科技有限公司(第一次,答得垃圾)</li><li>明峦科技(答得不好，我的问题)</li><li>理灵文化(不开摄像头俩女的唧唧歪歪)</li><li>萝卜兔(通过)</li><li>谐云科技(kpi)</li><li>奇点云</li><li>豪威科技(通过,但是顶头上司还有个深圳亚威科技需要面试)</li><li>哇撕塔科技(太强了,打不了一点)</li><li>瑞银电子</li><li>图软科技(通过)</li></ul><p>还有两个做ai的公司，忘记叫什么了，路边罢了。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;记录一下面试过的公司&quot;&gt;记录一下面试过的公司&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;杭州迪火科技有限公司(第一次,答得垃圾)&lt;/li&gt;
+&lt;li&gt;明峦科技(答得不好，我的问题)&lt;/li&gt;
+&lt;li&gt;理灵文化(不开摄像头俩女的唧唧歪歪)&lt;/li&gt;
+&lt;li&gt;萝卜兔(通过)&lt;/li&gt;</summary>
+      
+    
+    
+    
+    <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    <category term="面试" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>正在用remix重制博客</title>
@@ -521,34 +550,6 @@
     <category term="前端" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/"/>
     
     <category term="面试题" scheme="https://0922wx.github.io/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>10-13</title>
-    <link href="https://0922wx.github.io/2024/10/13/10-13/"/>
-    <id>https://0922wx.github.io/2024/10/13/10-13/</id>
-    <published>2024-10-13T03:08:47.000Z</published>
-    <updated>2024-10-25T15:30:33.241Z</updated>
-    
-    <content type="html"><![CDATA[<p>北海牧场浓醇凝酪</p><p>豪赤</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;北海牧场浓醇凝酪&lt;/p&gt;
-&lt;p&gt;豪赤&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    <category term="日常" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/"/>
-    
-    <category term="流水账" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/"/>
-    
-    <category term="2024年" scheme="https://0922wx.github.io/categories/%E6%97%A5%E5%B8%B8/%E6%B5%81%E6%B0%B4%E8%B4%A6/2024%E5%B9%B4/"/>
     
     
   </entry>
